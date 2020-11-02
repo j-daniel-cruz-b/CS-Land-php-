@@ -1,0 +1,45 @@
+/*-----------------------------------------------------------------------*/
+
+html {
+    font-size: 62.5%;
+    /** Reset para REMS - 62.5% = 10px de 16px **/
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.6rem;
+}
+
+.navbar {
+    background-color: ;
+}
+
+.header-home {
+    background-image: url(../img/background-home.png);
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+    min-height: 50rem;
+}
+
+.contenedor {
+    width: 95%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.contenido-header {
+    /* height: 100%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contenido-header p {
+    color: #ffffffc7;
+    background-color: rosybrown;
+    padding-bottom: 2rem;
+    max-width: 50rem;
+    line-height: 1;
+    font-size: 2.4rem;
+}
