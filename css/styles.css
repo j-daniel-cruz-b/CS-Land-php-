@@ -61,10 +61,25 @@ footer {
     min-height: 50rem;
 }
 
+/** Globales **/
+img {
+    max-width: 100%;
+}
 .contenedor {
-    width: 95%;
-    max-width: 120rem;
-    margin: 0 auto;
+    max-width: 120rem; /* = 1200px*/
+    margin: 0 auto 0 auto;   
+}
+h1{
+    font-size: 3rem;
+}
+h2{
+    font-size: 3.4rem;
+}
+h3{
+    font-size: 3rem;
+}
+h4{
+    font-size: 2.6rem;
 }
 
 .contenido-header {
@@ -74,17 +89,19 @@ footer {
     justify-content: space-between;
 }
 
-.contenido-header p {
+.contenido-header h1 {
     color: #ffffffc7;
     background-color: rosybrown;
-    padding-bottom: 2rem;
+    margin-top: 0;
+    padding-bottom: 1rem;
     max-width: 50rem;
     line-height: 1;
-    font-size: 2.4rem;
     text-align: center;
 }
 
 .col {
     max-width: 50rem;
     margin-left: 2.5rem;
+}
+.logo-home h1 {
 }
