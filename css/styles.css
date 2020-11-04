@@ -1,40 +1,54 @@
 html {
     box-sizing: border-box;
-    font-size: 70%; /** Reset para REMS - 62.5% = 10px de 16px **/
+    font-size: 70%;
+    /** Reset para REMS - 62.5% = 10px de 16px **/
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
     box-sizing: border-box;
 }
+
 body {
     font-family: 'Lato', sans-serif;
     font-size: 1.6rem;
     line-height: 2;
 }
+
+
 /** Globales **/
+
 img {
     max-width: 100%;
 }
+
 .contenedor {
-    max-width: 120rem; /* = 1200px*/
-    margin: 0 auto 0 auto;   
-}
-h1{
-    font-size: 3rem;
-}
-h2{
-    font-size: 3.4rem;
-}
-h3{
-    font-size: 3rem;
-}
-h4{
-    font-size: 2.6rem;
+    max-width: 120rem;
+    /* = 1200px*/
+    margin: 0 auto 0 auto;
 }
 
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 3.4rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+h4 {
+    font-size: 2.6rem;
+}
 
 .navbar {
     background-color: #212121;
     height: 60px;
+    width: 150rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -67,7 +81,7 @@ h4{
     margin: 0rem;
 }
 
-.header-home .inicio{
+.header-home {
     background-image: url(../img/background-home.png);
     background-position: center center;
     background-size: cover;
@@ -108,4 +122,24 @@ footer {
     text-decoration: none;
     font-size: 1.8rem;
     margin-right: 4rem;
+}
+
+
+/*CONTACTO*/
+
+label {
+    display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    background-color: #9D7EB9;
+    padding: 1rem;
+    display: block;
+    width: 100%;
+    margin-bottom: 2rem;
+    border: none;
+    border-radius: 1rem;
+    color-adjust: #000000;
 }
