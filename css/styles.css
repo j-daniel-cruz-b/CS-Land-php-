@@ -47,12 +47,16 @@ h4 {
 
 .navbar {
     background-color: #212121;
+<<<<<<< HEAD
     height: 60px;
     width: 150rem;
+=======
+    height: 6rem;
+    width: 100%;
+>>>>>>> 43ad2a4fe72c1552122b30af7e26da5f893967ad
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding-top: 0.5rem;
+    margin-left: 0rem;
 }
 
 .nav-navbar {
