@@ -86,6 +86,7 @@ h4 {
     background-size: cover;
     height: 100vh;
     min-height: 50rem;
+    margin-bottom: 0%;
 }
 
 .contenido-header {
