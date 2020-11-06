@@ -17,13 +17,13 @@ img {
     max-width: 100%;
 }
 .contenedor {
-    max-width: 150rem;
+    max-width: 120rem;
     /* = 1200px*/
     margin: 0 auto 0 auto;
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 3.8rem;
 }
 
 h2 {
@@ -31,7 +31,7 @@ h2 {
 }
 
 h3 {
-    font-size: 3rem;
+    font-size: 2.8rem;
 }
 
 h4 {
@@ -48,6 +48,12 @@ h4 {
 }
 .centrar-texto {
     text-align: center;
+}
+.contenido-centrado {
+    max-width: 1000px;
+}
+.imagen {
+    border-radius: 0 0 0 4rem;
 }
 /** Footer **/
 footer {
@@ -148,28 +154,96 @@ footer {
 .eventos {
     display: flex;
     flex-direction: column;
+    justify-content: space-between; 
+}
+.evento{
+    background-color:#424242;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    align-items: center;
+    border-radius: 2rem 2rem 2rem 4rem;
+}
+.evento a {
+    margin-top: 12rem;
+    margin-right: 4rem;
+}
+.texto-evento {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    margin: 0;
+}
+.texto-evento p {
+    font-size: 1.5rem;
+    margin-top: 0;
+    max-width: 500px;
+}
+/**Blog**/
+.descubre {
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 2rem;
+}
+.descubre .entradas{
+    flex-basis: 60%;
+    
+}
+
+.descubre .entrada-principal {
+    flex-basis: calc(40% - 2rem);
+    padding: 2rem;
+    border: 6px solid #9D7EB9;
+    background-color: #F5F5F5;
+    border-radius: 2rem;
+}
+.mini-entrda {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+.mini-entrda:last-of-type{
+    margin-bottom: 0;
+}
+.mini-entrda .imagen {
+    flex-basis: 30%;
+}
+.mini-entrda .texto-entrada {
+    flex-basis: calc(60% - 3rem);
+}
+.texto-entrada h4{
+    margin: 0;
+    line-height: 1.4;
+}
+.texto-entrada p {
+    color: black;
+    text-decoration: none;
 }
 /**Botones*/
 .boton-base {
-    border: 1px solid #2e518b;
-    /*anchura, estilo y color borde*/
-    padding: 10px;
-    /*espacio alrededor texto*/
-    background-color: #2e518b;
-    /*color botón*/
-    color: #ffffff;
-    /*color texto*/
+    color: white;
+    font-weight: 300;
     text-decoration: none;
-    /*decoración texto*/
-    text-transform: uppercase;
-    /*capitalización texto*/
-    font-family: 'Helvetica', sans-serif;
-    /*tipografía texto*/
-    border-radius: 50px;
-    /*bordes redondos*/
+    font-size: 1.8rem;
+    padding: .5rem .5rem;
+    display: inline-block;
+    text-align: center;
+    border: none;
+    width: 120px;
+    height: 45px;
+    border-radius: 10px;
 }
-
-
+.boton-rosa {
+    background-color: #D693BE;
+}
+.boton-morado {
+    background-color: #9D7EB9;
+}
+.boton-azul {
+    background-color: #B2C4CF;
+}
 /*CONTACTO*/
 
 label {
