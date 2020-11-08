@@ -119,6 +119,14 @@ footer {
     min-height: 50rem;
     margin-bottom: 0%;
 }
+.site-header.tienda {
+    background-image: url(../img/background-main\ 7.jpg);
+    background-position: center center;
+    background-size: cover;
+    height: 50vh;
+    min-height: 50rem;
+    margin-bottom: 0%;
+}
 
 .contenido-header {
     height: 100%;
@@ -498,5 +506,142 @@ input[type="tel"] {
 .texto-eventoS p{
     font-size: 2.5rem;
 }
+/**Tienda**/
+main {
+    align-items: center;
+}
+.contenido-lo-mas-comprado {
+    background-color: #e91e63;
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 85rem;
+    margin-left: 20rem;
+    border-radius: 2rem;
+    
+    margin-bottom: 3rem;
+}
+.contenido-lo-mas-comprado img {
+    max-width: 35rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-left: 9rem;
+}
+.texto-t1 {
+    padding-top: 2rem;
+    margin-left: 2rem;
+    color: white;
+}
+.texto-t1 a {
+    margin-top: 8rem;
+}
+.producto-t {
+    flex: 0 0 calc(22.2% - 1rem);
+    /**flex-shrink: 0;
+    flex-basis: calc(33.3% - 1rem);**/
+    border: 3px solid #B5B5B5;
+    background-color: #D693BE;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+.producto-t img {
+    padding-left: 4rem;
+    padding-top: 1rem;
+}
+.producto-t h4 {
+    font-size: 2rem;
+}
+.producto-t p {
+    font-size: 1.7rem;
+}
+.producto-t a {
+    margin-left: 6rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
 
-
+/**parte inf**/
+.parte-inf{
+    display: flex;
+    justify-content: space-between;
+}
+.descuento {
+   flex: 50%;
+}
+.descuento h3 {
+    color: red;
+ }
+.texto-desc{
+    max-width: 90%;
+    padding-left: 1rem;
+    padding-right: 0;
+}
+.liqui {
+   flex: 45%;
+}
+.liqui h3 {
+    color: red;
+ }
+.contenido-liqui {
+    display: flex;
+    justify-content: space-between;
+}
+.producto-d {
+    /**flex-shrink: 0;
+    flex-basis: calc(33.3% - 1rem);**/
+    border: 3px solid #B5B5B5;
+    background-color: #D693BE;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    align-items: center;
+    max-width: 85%;
+    border-radius: 2rem;
+}
+.texto-desc h5 {
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.texto-desc p {
+    font-size: 1.7rem;
+    margin-bottom: 0rem;
+}
+.producto-d a {
+    margin-left: 39rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+.producto-l {
+    
+    flex: 2;
+    /**flex-shrink: 0;
+    flex-basis: calc(33.3% - 1rem);**/
+    border: 3px solid #B5B5B5;
+    background-color: #D693BE;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+    align-items: center;
+    max-width: 100%;
+    border-radius: 2rem;
+}
+.producto-l a {
+    margin: 2rem;
+    margin-left: 7rem;
+    margin-bottom: 1rem;
+}
+.texto-l{
+    max-width: 90%;
+    margin-left: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 0;
+}
+.texto-l h5 {
+    font-size: 3.5rem;
+    margin-top: 2rem;
+    padding-bottom: 0;
+}
+.texto-l p {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
