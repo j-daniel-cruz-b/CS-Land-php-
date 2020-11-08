@@ -23,11 +23,11 @@ img {
 }
 
 h1 {
-    font-size: 3.8rem;
+    font-size: 4rem;
 }
 
 h2 {
-    font-size: 3.4rem;
+    font-size: 3.8rem;
 }
 
 h3 {
@@ -54,6 +54,7 @@ h4 {
 }
 .imagen {
     border-radius: 0 0 0 4rem;
+
 }
 .texto-blanco {
     color: white;
@@ -104,6 +105,14 @@ footer {
 }
 .site-header.nosotros {
     background-image: url(../img/background-main.jpg);
+    background-position: center center;
+    background-size: cover;
+    height: 50vh;
+    min-height: 50rem;
+    margin-bottom: 0%;
+}
+.site-header.stream {
+    background-image: url(../img/background-main\ 6.jpg);
     background-position: center center;
     background-size: cover;
     height: 50vh;
@@ -395,7 +404,7 @@ input[type="tel"] {
 }
 .texto-historia p{
     font-size: 2rem;
-    padding-top: 1rem;
+    padding-top: 0;
     text-align: justify;
 }
 
@@ -432,6 +441,62 @@ input[type="tel"] {
    margin-left: 2rem;
    margin-right: 2rem;
 }
-
+/*Stream*/
+.evento-e1 {
+    background-image: url(/img/bts-evento-estelar.jpg);
+    background-size: cover;
+    height: 100vh;
+    min-height: 50rem;
+    margin-bottom: 7rem;
+    border-radius: 4rem;
+}
+.evento-e2 {
+    background-image: url(/img/adele-evento-estelar.jpg);
+    background-size: cover;
+    height: 100vh;
+    min-height: 50rem;
+    margin-bottom: 7rem;
+    border-radius: 4rem;
+}
+.evento-e3 {
+    background-image: url(/img/billie-concert-estelar.jpg);
+    background-size: cover;
+    height: 100vh;
+    min-height: 50rem;
+    margin-bottom: 7rem;
+    border-radius: 4rem;
+} 
+.contenido-eventoE {
+    padding-left: 5rem;
+}
+.contenido-eventoE p {
+  color: white;
+  font-size: 3.5rem;
+  margin-bottom: 0;
+  padding-top: 50rem;
+}
+.eventoS{
+    background-color:#333333;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    border-radius: 2rem 2rem 2rem 4rem;
+}
+.eventoS a {
+    margin-top: 12rem;
+    margin-right: 4rem;
+}
+.texto-eventoS {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+}
+.texto-eventoS h3 {
+    padding-top: 0;
+}
+.texto-eventoS p{
+    font-size: 2.5rem;
+}
 
 
