@@ -55,6 +55,9 @@ h4 {
 .imagen {
     border-radius: 0 0 0 4rem;
 }
+.texto-blanco {
+    color: white;
+}
 /** Footer **/
 footer {
     background-color: #212121;
@@ -157,7 +160,7 @@ footer {
     justify-content: space-between; 
 }
 .evento{
-    background-color:#424242;
+    background-color:#212121;
     display: flex;
     justify-content: space-between;
     margin-bottom: 3rem;
@@ -181,45 +184,109 @@ footer {
     max-width: 500px;
 }
 /**Blog**/
+.seccion-blog {
+    background-color: #5a5959;
+}
 .descubre {
    display: flex;
    justify-content: space-between;
-   margin-bottom: 2rem;
+   padding-bottom: 3rem;
+   margin-top: 3rem;
+   /* margin-bottom: 2rem; */
 }
 .descubre .entradas{
     flex-basis: 60%;
-    
 }
-
-.descubre .entrada-principal {
+.entrada-principal {
     flex-basis: calc(40% - 2rem);
-    padding: 2rem;
-    border: 6px solid #9D7EB9;
-    background-color: #F5F5F5;
-    border-radius: 2rem;
+    padding: 0;
+    border: 5px solid white;
+    background-image: url(/img/adele-blog.jpg);
+    background-position: center center;
+    background-size: cover;
+    border-radius: 0rem 7rem 0rem 7rem;
+    margin-left: 5rem;
+}
+.entrada-principal .texto-entrada {
+    margin-top: 27rem;
+    background-color: #aca9afa2;
+    color: black;
 }
 .mini-entrda {
+    border: 5px solid #8458aa; 
+    background-color: #9D7EB9;
+    border-radius: 2rem;
     padding: 2rem;
     display: flex;
     justify-content: space-between;
     margin-bottom: 2rem;
+    align-items: center;
 }
 .mini-entrda:last-of-type{
     margin-bottom: 0;
 }
 .mini-entrda .imagen {
-    flex-basis: 30%;
+    flex-basis: 25%;
 }
 .mini-entrda .texto-entrada {
-    flex-basis: calc(60% - 3rem);
+    flex-basis: calc(70% - 1rem);
+    margin-left: 1rem;
 }
 .texto-entrada h4{
     margin: 0;
     line-height: 1.4;
 }
+.mini-entrda .texto-entrada p {
+    color: white;
+    text-decoration: none;
+    margin-top: 1rem;
+    line-height: 1.4;
+}
 .texto-entrada p {
     color: black;
     text-decoration: none;
+    margin-top: 1rem;
+    line-height: 1.4;
+}
+/**Productos**/
+.vista-tienda {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.producto {
+    flex: 0 0 calc(33.3% - 1rem);
+    /**flex-shrink: 0;
+    flex-basis: calc(33.3% - 1rem);**/
+    border: 3px solid #B5B5B5;
+    background-color: #D693BE;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+.texto-prod h4{
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+.texto-prod {
+    padding: 2rem;
+}
+.producto a {
+    margin-left: 30%;
+    margin-bottom: 1.5rem;
+}
+.imagen-prod {
+    background-color: white;
+    padding: 0;
+    margin: 0;
+}
+.producto img {
+    padding-left: 4rem;
+    padding-top: 1rem;
+}
+.precio {
+    color: #7520c0;
+    font-weight: 700;
 }
 /**Botones*/
 .boton-base {
@@ -242,7 +309,7 @@ footer {
     background-color: #9D7EB9;
 }
 .boton-azul {
-    background-color: #B2C4CF;
+    background-color: #63a9d4;
 }
 /*CONTACTO*/
 
