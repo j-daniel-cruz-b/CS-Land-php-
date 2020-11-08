@@ -11,40 +11,41 @@
     </head>
     
 <body>
-        <header class="site-header home">
-            <div class="contenido-header">
-                <div class="navbar">
-                    <a class="icono contenedor" href="/" >
-                        <img src="img/icono.png" alt="Logotipo de CS Land">
-                    </a>
-                    <div class="navegacion">
-                        <nav>
-                            <a href="nosotros.html">Nosotros</a>
-                            <a href="stream.html">Stream</a>
-                            <a href="tienda.html">Tienda</a>
-                            <a href="contacto.html">Contacto</a>
-                        </nav>
-                        <a href="">
-                                <img src="./img/login.png" alt="login">
-                            </a>
-                    </div>
+    <header class="site-header contacto">
+        <div class="contenido-header">
+            <div class="navbar">
+                <a class="icono contenedor" href="/" >
+                    <img src="img/icono.png" alt="Logotipo de CS Land">
+                </a>
+                <div class="navegacion">
+                    <nav>
+                        <a href="nosotros.html">Nosotros</a>
+                        <a href="stream.html">Stream</a>
+                        <a href="tienda.html">Tienda</a>
+                        <a href="contacto.html">Contacto</a>
+                    </nav>
+                    <a href="">
+                            <img src="./img/login.png" alt="login">
+                        </a>
                 </div>
-                <img src="img/logo-sin-fondo.png" alt="" srcset=""> 
             </div>
-        </header>
-    <hr>
-    <section>
+            <h1 class="texto-titulo">CONTACTANOS</h1> 
+        </div>
+    </header>
+   
+    <section class="contenedor seccion">
         <h1>INFORMACIÓN DE CONTACTO</h1>
-        <p>CORREO: &ThinSpace; <span>cs-land.enterprise@gmail.com</span></p>
-        <p>TÉLEFONO: &ThinSpace; <span>52(84)200-87-70</span></p>
-        <p>DIRECCIÓN: &ThinSpace; <span>Montes Pirineos 947Independencia Oriente, 44340 Guadalajara, Jal.</span></p>
-
+        <div class="info">
+            <p><span>CORREO:</span>&ThinSpace;cs-land.enterprise@gmail.com</p>
+            <p> <span>TÉLEFONO:</span>  &ThinSpace;52(84)200-87-70</p>
+            <p><span>DIRECCIÓN:</span>  &ThinSpace;Montes Pirineos 947Independencia Oriente, 44340 Guadalajara, Jal.</p>
+        </div>
     </section>
-    <hr>
-    <main class="contenedor">
+    <hr class="contenedor">
+    <main class="contenedor-contacto seccion">
         <h2>Formulario de Contacto & Soporte</h2>
 
-        <form action="">
+        <form class="contacto" action="">
             <fieldset>
                 <legend>Información Personal</legend>
                 <label for="nombre">Nombre</label> <input id="nombre" type="text" placeholder="Nombre Completo">
@@ -86,7 +87,7 @@
                 <label for="hora">A:</label>
                 <input type="time" id="hora" min="9:00" max="18:00">
             </fieldset>
-            <a href="http://laweb.com" target="_blank" class="boton.boton-base">Mi botón</a>
+            <input type="submit" value="Enviar" class="boton-base boton-azul">
         </form>
     </main>
 
