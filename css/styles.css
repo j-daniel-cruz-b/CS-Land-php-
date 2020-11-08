@@ -95,10 +95,18 @@ footer {
 
 /* Header */
 .site-header.home {
-    background-image: url(../img/background-home.png);
+    background-image: url(../img/background-main\ 5.jpg);
     background-position: center center;
     background-size: cover;
-    height: 100vh;
+    height: 85vh;
+    min-height: 50rem;
+    margin-bottom: 0%;
+}
+.site-header.nosotros {
+    background-image: url(../img/background-main.jpg);
+    background-position: center center;
+    background-size: cover;
+    height: 50vh;
     min-height: 50rem;
     margin-bottom: 0%;
 }
@@ -109,17 +117,22 @@ footer {
     flex-direction: column;
     align-items: center;
 }
-
+.contenido-header img {
+    height: 6vh;
+}
 .contenido-header h1 {
-    color: #ffffffc7;
-    background-color: rosybrown;
-    margin-top: 0;
-    max-width: 50rem;
+    /* color: #ffffffc7; */
+    /* background-color: rosybrown; */
+    color: white;
+    padding: 2.5rem;
     line-height: 1;
     text-align: center;
+    font-size: 12rem;
+    border-radius: 2rem;
 }
-.contenido-header img{
-    margin-bottom: 0;
+.contenido-header .logo-home{
+    margin-bottom: 3rem;
+    height: 55vh;
 }
 
 /* Barra de navegación principal*/
@@ -329,4 +342,96 @@ input[type="tel"] {
     border-radius: 1rem;
     color-adjust: #000000;
 }
+/**PAGINAS INTERNAS**/
+/**nosotors**/
+.contenedor-mv {
+    margin-top: 5rem;
+    background-color:#212121;
+}
+.m-v {
+    display: flex;
+    justify-content: space-between;
+    
+}
+.mision {
+    padding: 2rem;
+    flex-basis: 50%;
+    background-color: #74afd4;
+    align-items: center;
+    border-radius: 2rem;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+.contenedor-mv img {
+    max-width: 40rem;
+    margin-left: calc(50% - 20rem);
+}
+.vision {
+    padding: 2rem;
+    margin-left: 4rem;
+    flex-basis: 50%;
+    background-color: #74afd4;
+    align-items: center;
+    border-radius: 2rem;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+.contenido-his {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2rem;
+}
+.texto-his blockquote {
+    font-weight: 900;
+    font-size: 2rem;
+    margin: 0;
+    padding: 1rem 0 3rem 0;
+}
+.imagen-h{
+    margin-top: 7rem;
+}
+.imagen-h img {
+    max-width: 60rem;
+}
+.texto-historia p{
+    font-size: 2rem;
+    padding-top: 1rem;
+    text-align: justify;
+}
+
+.fundadores {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    padding: 0;
+}
+.f1 {
+    border: 3px solid #B5B5B5;
+    background-color: #D693BE;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+.f2 {
+    border: 3px solid #B5B5B5;
+    background-color: #D693BE;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+.img-f {
+    background-color: white;
+    padding: 0;
+    margin: 0;
+}
+.img-f img {
+    width: 20vh;
+    padding-top: 2rem;
+}
+.texto-f {
+   margin-left: 2rem;
+   margin-right: 2rem;
+}
+
+
 
