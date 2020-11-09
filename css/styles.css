@@ -14,6 +14,7 @@ body {
     font-family: 'Concert One', sans-serif;
     font-size: 2rem;
     line-height: 2;
+    background-color: #636363;
 }
 
 
@@ -31,18 +32,42 @@ img {
 
 h1 {
     font-size: 4rem;
+    color: white;
 }
 
 h2 {
     font-size: 3.8rem;
+    color: white;
 }
 
 h3 {
     font-size: 2.8rem;
+    color: white;
 }
 
 h4 {
     font-size: 2.5rem;
+    color: white;
+}
+
+p {
+    color: white;
+}
+
+label {
+    color: white;
+}
+
+blockquote {
+    color: white;
+}
+
+legend {
+    color: white;
+}
+
+li {
+    color: white;
 }
 
 
@@ -704,7 +729,7 @@ main {
 
 .texto-desc {
     max-width: 90%;
-    padding-left: 1rem;
+    padding-left: .5rem;
     padding-right: 0;
 }
 
@@ -885,11 +910,13 @@ textarea {
 }
 
 .fondo-blog-descubre {
-    background-color: #F523AC;
+    background-color: #F3A3D7;
 }
 
 .fondo-blog-internacional {
-    background-color: #C523F5;
+    /* background-color: #e29ef3; */
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 
@@ -897,7 +924,7 @@ textarea {
 
 .evento-estelar {
     /* border: 5px solid #070707; */
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
     border-radius: 2rem;
     padding: 2rem;
     display: flex;
@@ -972,7 +999,7 @@ textarea {
     display: block;
     width: 1rem;
     height: 35rem;
-    background-color: rgb(124, 122, 122);
+    background-color: #9D7EB9;
     margin-top: 1rem;
     margin-left: 3rem;
 }
