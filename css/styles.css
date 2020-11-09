@@ -891,3 +891,88 @@ textarea {
 .fondo-blog-internacional {
     background-color: #C523F5;
 }
+
+
+/*EVENTOS ESTELARES-*/
+
+.evento-estelar {
+    /* border: 5px solid #070707; */
+    background-color: #ffffff;
+    border-radius: 2rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.texto-estelar {
+    padding-left: 3rem;
+}
+
+.contenido-imagenes {
+    display: flex;
+}
+
+.contenido-imagenes img {
+    margin-left: 5rem;
+}
+
+.evento-abajo {
+    display: flex;
+}
+
+.imagenes-evento-chicas {
+    max-width: 300px;
+    align-items: center;
+}
+
+.boletos-global {
+    padding-left: 30rem;
+}
+
+.boletos {
+    display: flex;
+    flex-direction: column;
+}
+
+.boletos-normal {
+    border: 5px solid #9376AE;
+    border-radius: 2rem;
+    background-color: #DFA3CA;
+}
+
+.boletos-vip {
+    border: 5px solid #9376AE;
+    border-radius: 2rem;
+    background-color: #DFA3CA;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.texto-boletos {
+    margin-left: 5rem;
+}
+
+.comprar-boletos {
+    margin-left: 3rem;
+    margin-bottom: 2rem;
+}
+
+.merch h2 {
+    width: 100rem;
+}
+
+.evento-abajo h2 {
+    max-width: 50rem;
+}
+
+.evento-estelar h5::before {
+    content: '';
+    display: block;
+    width: 1rem;
+    height: 35rem;
+    background-color: rgb(124, 122, 122);
+    margin-top: 1rem;
+    margin-left: 3rem;
+}
