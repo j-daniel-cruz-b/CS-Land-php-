@@ -557,19 +557,19 @@ footer {
 .f2 {
     border: 3px solid #B5B5B5;
     background-color: #D693BE;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     align-items: center;
 }
 
 .img-f {
     background-color: white;
-    padding: 0;
-    margin: 0;
+    padding: 1rem;
+    margin: 0rem;
 }
 
 .img-f img {
-    width: 20vh;
+    width: 15vh;
     padding-top: 2rem;
 }
 
@@ -907,10 +907,6 @@ textarea {
     justify-content: space-between;
     margin-bottom: 2rem;
     align-items: center;
-}
-
-.fondo-blog-descubre {
-    background-color: #F3A3D7;
 }
 
 .fondo-blog-internacional {
