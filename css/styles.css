@@ -70,6 +70,10 @@ li {
     color: white;
 }
 
+img {
+    max-width: 100%;
+}
+
 
 /**Utilidades*/
 
@@ -570,7 +574,8 @@ footer {
 
 .img-f img {
     width: 15vh;
-    padding-top: 2rem;
+    height: 20vh;
+    padding-top: 0rem;
 }
 
 .texto-f {
