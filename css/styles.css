@@ -234,6 +234,12 @@ footer {
     height: 55vh;
 }
 
+@media(max-width:768px) {
+    .contenido-header h1 {
+        font-size: 5rem;
+    }
+}
+
 
 /* Barra de navegación principal*/
 
@@ -802,7 +808,7 @@ footer {
 }
 
 
-/**Tienda**/
+/**TIENDA**/
 
 main {
     align-items: center;
@@ -810,24 +816,32 @@ main {
 
 .contenido-lo-mas-comprado {
     background-color: #e91e63;
-    /* display: flex;
-    justify-content: space-evenly;
-    max-width: 85rem;
-    margin-left: 20rem;
-    border-radius: 2rem;
-    margin-bottom: 3rem; */
+    margin: 2rem;
+    display: block;
+    justify-content: center;
+    margin-bottom: 3rem;
+    align-items: center;
+    border-radius: 2rem 2rem 2rem 4rem;
+    text-align: center;
 }
 
 .contenido-lo-mas-comprado img {
-    /* max-width: 35rem;
-    
-    padding-bottom: 1rem;
-    margin-left: 9rem; */
     padding-top: 3rem;
+    padding: 3rem;
+}
+
+@media(min-width: 920px) {
+    .contenido-lo-mas-comprado {
+        display: flex;
+        justify-content: space-between;
+        border-radius: 2rem 2rem 2rem 4rem;
+        text-align: left;
+    }
 }
 
 .texto-t1 {
     padding-top: 2rem;
+    padding-right: 4rem;
     margin-left: 2rem;
     color: white;
 }
@@ -843,18 +857,6 @@ main {
     margin-bottom: 2rem;
     align-items: center;
 }
-
-
-/* .producto-t {
-    flex: 0 0 calc(22.2% - 1rem);
-    /* flex-shrink: 0;
-    flex-basis: calc(33.3% - 1rem); 
-    border: 3px solid #B5B5B5;
-    background-color: #D693BE;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    align-items: center;
-} */
 
 .producto-t img {
     padding-left: 4rem;
@@ -928,15 +930,12 @@ main {
 }
 
 .producto-d a {
-    /* margin-left: 39rem; */
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
 .producto-l {
     flex: 2;
-    /**flex-shrink: 0;
-    flex-basis: calc(33.3% - 1rem);**/
     border: 3px solid #B5B5B5;
     background-color: #9d7eb9;
     margin-bottom: 2rem;
@@ -1050,7 +1049,6 @@ textarea {
     border-radius: 2rem;
     padding: 2rem;
     display: block;
-    /* flex-direction: column; */
     justify-content: center;
     margin-bottom: 2rem;
     align-items: center;
@@ -1069,7 +1067,6 @@ textarea {
 }
 
 .fondo-blog-internacional {
-    /* background-color: #e29ef3; */
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
@@ -1078,8 +1075,6 @@ textarea {
 /*EVENTOS ESTELARES-*/
 
 .evento-estelar {
-    /* border: 5px solid #070707; */
-    /* background-color: #ffffff; */
     border-radius: 2rem;
     padding: 2rem;
     display: block;
@@ -1094,8 +1089,6 @@ textarea {
 
 @media(min-width: 768px) {
     .evento-estelar {
-        /* border: 5px solid #070707; */
-        /* background-color: #ffffff; */
         border-radius: 2rem;
         padding: 2rem;
         display: flex;
