@@ -763,6 +763,10 @@ footer {
     padding-top: 50rem;
 }
 
+.contenido-eventoE a {
+    margin-bottom: 2rem;
+}
+
 .eventoS {
     background-color: #212121;
     display: block;
@@ -790,6 +794,7 @@ footer {
 .eventoS a {
     margin-top: 12rem;
     margin-right: 4rem;
+    margin-bottom: 2rem;
 }
 
 .texto-eventoS {
@@ -988,10 +993,17 @@ main {
     margin: 0 auto 0 auto;
 }
 
+.contenedor h1 {
+    margin-left: 3rem;
+}
+
+.contenedor-contacto h2 {
+    margin-left: 3rem;
+}
+
 input[type="submit"] {
     margin-top: 2rem;
     margin-bottom: 2rem;
-    margin-left: 106rem;
 }
 
 label {
@@ -1038,6 +1050,21 @@ textarea {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+
+/*LOGIN*/
+
+.login-reg h3 {
+    margin-left: 3rem;
+}
+
+.left-b {
+    margin: 0;
+}
+
+.right-b {
+    text-align: right;
 }
 
 
