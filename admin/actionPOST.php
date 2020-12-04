@@ -25,6 +25,9 @@
         $cost2Event = $resultado['cost2Event'];
         // $imgEvent = $resultado['imgEvent'];
         echo var_dump($resultado);
+        
+        
+
         // echo '<script type="text/javascript">';
         //     // echo 'alert(\'' . addslashes($nameEvent) . '\');';
         //     echo 'alert(\'' . rawurlencode($nameEvent) . '\');';
