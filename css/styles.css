@@ -266,6 +266,13 @@ footer {
     margin-right: 2rem;
 }
 
+.navbar p {
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+    margin-right: 2rem;
+}
+
 .navbar a:hover {
     color: #D693BE;
 }
