@@ -101,8 +101,6 @@
                                         </thead>
                                         <tbody>
                                             <?php
-                                                $conciertos = array();           
-        
                                                     foreach($registros as $registro) {
                                                             echo '<tr>';
                                                             for ($i=0; $i < $columnas; $i++) { 
@@ -128,9 +126,13 @@
                                 <div name="Create" class="container">
                                     <form action="actionPOST.php" method="post">
                                         <div class="form-row">
+                                            <div class="form-group col-md-5">
+                                                <!-- <label for="nameEvent">Nombre del Producto</label> -->
+                                                <input type="text" class="form-control" value="Evento" name="entity" readonly>
+                                            </div>
                                             <div class="form-group col-md-10">
                                                 <label for="nameEvent">Name</label>
-                                                <input type="text" class="form-control" name="nameEvent">
+                                                <input type="text" class="form-control" name="nameEvent" required>
                                             </div>
                                         </div>
                                         <div class="form-row">
@@ -142,39 +144,52 @@
                                         <div class="form-row">
                                             <div class="form-group col-md-5">
                                                 <label for="dateEvent">Fecha</label>
-                                                <input type="date" class="form-control" name="dateEvent">
+                                                <input type="date" class="form-control" name="dateEvent" required>
                                             </div>
                                             <div class="form-group col-md-5">
                                                 <label for="timeEvent">Hora</label>
-                                                <input type="time" class="form-control" name="timeEvent">
+                                                <input type="time" class="form-control" name="timeEvent" required>
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-3">
                                                 <label for="cost1Event">Precio Normal</label>
-                                                <input type="number" class="form-control" name="cost1Event">
+                                                <input type="number" class="form-control" name="cost1Event" required>
                                             </div>
                                             <div class="form-group col-md-3">
                                                 <label for="cost2Event">Precio VIP</label>
-                                                <input type="number" class="form-control" name="cost2Event">
+                                                <input type="number" class="form-control" name="cost2Event" required>
                                             </div>
                                             <div class="form-group col-md-4">
-                                                <label for="nArtist">Número de Artista</label>
-                                                <select class="custom-select" name="nArtist">
-                                                    <option value="0">Número</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
+                                                <label for="nArtist">Artista </label>
+                                                <select class="custom-select" name="nArtist" required>
+                                                    <option value="0" disabled selected>Número</option>
+                                                    <?php 
+                                                         try {
+                                                            require_once ('../includes/functions/db_connection-regular.php');
+                                                            $sql = "SELECT * FROM `artist` ORDER BY `artist`.`idA` ASC";
+                                                            $res = $connection->query($sql);
+                                                        } catch (\Exception $e) {
+                                                            echo $connection->error;
+                                                        }
+                                                        $ids = $res->fetch_all();
+                                                        foreach($ids as $id) {
+                                                            echo '<option value="'.$id[0].'">'.$id[0].' - '.$id[1].'</option>';
+                                                        
+                                                        }
+                                                    $connection->close();
+                                                    ?>
+                                                    
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-5">
-                                            <label for="imgEvent">Imagen del Evento (Exibición [237x237px])</label>
-                                                <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="imgEvent">
-                                                    <label class="custom-file-label" for="customFile">Elije un archivo (.jpg)</label>
-                                                </div>
+                                            <!-- <label for="imgEvent">Imagen del Evento (Exibición [237x237px])</label> -->
+                                            <div class="form-group">
+                                                <label for="imgEvent">Imagen del Evento (Exibición [237x237px])</label>
+                                                <input type="file" class="form-control-file" name="imgEvent">
+                                            </div>
                                             </div>
                                             <div class="form-group col-md-5">
                                             <label for="inputCity">Imagen del Evento (Venta [450x450px])</label>
@@ -302,40 +317,55 @@
                                 <div name="Create" class="container">
                                     <form action="actionPOST.php" method="post">
                                         <div class="form-row">
+                                            <div class="form-group col-md-5">
+                                                <!-- <label for="nameEvent">Nombre del Producto</label> -->
+                                                <input type="text" class="form-control" value="Producto" name="entity" readonly>
+                                            </div>
                                             <div class="form-group col-md-10">
-                                                <label for="nameEvent">Nombre del Producto</label>
+                                                <label for="nameProduct">Nombre del Producto</label>
                                                 <input type="text" class="form-control" name="nameProduct">
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-10">
-                                                <label for="descEvent">Descripción del Producto</label>
+                                                <label for="descProduct">Descripción del Producto</label>
                                                 <textarea class="form-control" name="descProduct" placeholder="Descripción breve del producto" required></textarea>
                                             </div>
                                         </div>
                                         
                                         <div class="form-row">
-                                            <div class="form-group col-md-3">
-                                                <label for="cost1Event">Precio</label>
+                                            <div class="form-group col-md-5">
+                                                <label for="costProduct">Precio</label>
                                                 <input type="number" class="form-control" name="costProduct">
                                             </div>
                                             
-                                            <div class="form-group col-md-4">
-                                                <label for="nArtist">Artista</label>
+                                            <div class="form-group col-md-5">
+                                                <label for="Artist">Artista</label>
                                                 <select class="custom-select" name="Artist">
                                                     <option value="0">Seleccione el Artista</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
+                                                    <?php 
+                                                        try {
+                                                            require_once ('../includes/functions/db_connection-regular.php');
+                                                            $sql = "SELECT * FROM `artist` ORDER BY `artist`.`idA` ASC";
+                                                            $res = $connection->query($sql);
+                                                            } catch (\Exception $e) {
+                                                                echo $connection->error;
+                                                            }
+                                                            $ids = $res->fetch_all();
+                                                            foreach($ids as $id) {
+                                                                echo '<option value="'.$id[0].'">'.$id[0].' - '.$id[1].'</option>';
+                                                            
+                                                            }
+                                                    $connection->close();
+                                                    ?>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-5">
-                                            <label for="imgEvent">Imagen del Evento (Exibición [237x237px])</label>
-                                                <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="imgProduct">
-                                                    <label class="custom-file-label" for="customFile">Elije un archivo (.jpg)</label>
+                                                <div class="form-group">
+                                                    <label for="imgProduct">Imagen del Producto (Exibición [237x237px])</label>
+                                                    <input type="file" class="form-control-file" name="imgProduct">
                                                 </div>
                                             </div>
                                             
@@ -458,55 +488,69 @@
                                 <div name="Create" class="container">
                                     <form action="actionPOST.php" method="post">
                                         <div class="form-row">
+                                            <div class="form-group col-md-5">
+                                                <!-- <label for="nameEvent">Nombre del Producto</label> -->
+                                                <input type="text" class="form-control" value="Usuario" name="entity" readonly>
+                                            </div>
                                             <div class="form-group col-md-10">
-                                                <label for="nameEvent">Nombre</label>
+                                                <label for="firstnameUser">Nombre</label>
                                                 <input type="text" class="form-control" name="firstnameUser">
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-10">
-                                                <label for="nameEvent">Apellidos</label>
+                                                <label for="lastnameUser">Apellidos</label>
                                                 <input type="text" class="form-control" name="lastnameUser">
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-10">
-                                                <label for="nameEvent">Username</label>
+                                                <label for="nameUser">Username</label>
                                                 <input type="text" class="form-control" name="nameUser">
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-10">
-                                                <label for="nameEvent">Email</label>
+                                                <label for="emailUser">Email</label>
                                                 <input type="email" class="form-control" name="emailUser">
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-10">
-                                                <label for="nameEvent">Contraseña</label>
+                                                <label for="passUser">Contraseña</label>
                                                 <input type="password" class="form-control" name="passUser">
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-10">
-                                                <label for="nameEvent">Confirmar Contraseña</label>
+                                                <label for="CpassUser">Confirmar Contraseña</label>
                                                 <input type="password" class="form-control" name="CpassUser">
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-5">
-                                                <label for="dateEvent">Telefóno</label>
+                                                <label for="phoneUser">Telefóno</label>
                                                 <input type="tel" class="form-control" name="phoneUser">
                                             </div>
                                             <div class="form-group col-md-4">
-                                                <label for="nArtist">Rol</label>
+                                                <label for="rolUser">Rol</label>
                                                 <select class="custom-select" name="rolUser">
                                                     <option value="0" disabled selected>Rol de usuario</option>
-                                                    <option value="1">Súper Admin</option>
-                                                    <option value="2">Eventos</option>
-                                                    <option value="3">Tienda</option>
-                                                    <option value="4">Contacto</option>
-                                                    <option value="5">Cliente</option>
+                                                    <?php 
+                                                        try {
+                                                            require_once ('../includes/functions/db_connection-regular.php');
+                                                            $sql = "SELECT * FROM `role` ORDER BY `role`.`idR` ASC";
+                                                            $res = $connection->query($sql);
+                                                            } catch (\Exception $e) {
+                                                                echo $connection->error;
+                                                            }
+                                                            $ids = $res->fetch_all();
+                                                            foreach($ids as $id) {
+                                                                echo '<option value="'.$id[0].'">'.$id[0].' - '.$id[1].'</option>';
+                                                            
+                                                            }
+                                                    $connection->close();
+                                                    ?>
                                                 </select>
                                             </div>
                                         </div>
@@ -514,7 +558,7 @@
                                         <button type="submit" class="btn btn-primary">Registrar Usuario</button>
                                     </form>
                                 </div>
-                                
+
                                 <?php
                                 break;
                             case 'put':
