@@ -19,16 +19,16 @@
         $resultado = $_POST;
         $nameEvent = $resultado['nameEvent'];    
         $descEvent = $resultado['descEvent'];
-        $dateEvent = $resultado;
-        $timeEvent = $resultado;
-        $cost1Event = $resultado;
-        $dateEvent = $resultado;
-        $dateEvent = $resultado;
-        $str = 'hola';
-        echo '<script type="text/javascript">';
-            // echo 'alert(\'' . addslashes($nameEvent) . '\');';
-            echo 'alert(\'' . rawurlencode($nameEvent) . '\');';
-            echo '</script>';
+        $dateEvent = $resultado['dateEvent'];
+        $timeEvent = $resultado['timeEvent'];
+        $cost1Event = $resultado['cost1Event'];
+        $cost2Event = $resultado['cost2Event'];
+        // $imgEvent = $resultado['imgEvent'];
+        echo var_dump($resultado);
+        // echo '<script type="text/javascript">';
+        //     // echo 'alert(\'' . addslashes($nameEvent) . '\');';
+        //     echo 'alert(\'' . rawurlencode($nameEvent) . '\');';
+        //     echo '</script>';
             // include_once ('../admin/results.php?entity=evento&action=get');
     ?>
 
