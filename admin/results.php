@@ -123,7 +123,7 @@
                                 <?php
                                 break;
                             case 'post':
-                                echo '<h4>REALIZA NUEVO REGISTROS</h4>'; ?>
+                                echo '<h4>REALIZA NUEVOS REGISTROS</h4>'; ?>
         
                                 <div name="Create" class="container">
                                     <form action="actionPOST.php" method="post">
@@ -297,45 +297,33 @@
                                 <?php
                                 break;
                             case 'post':
-                                echo '<h4>REALIZA NUEVO REGISTROS</h4>'; ?>
+                                echo '<h4>REALIZA NUEVOS REGISTROS</h4>'; ?>
         
                                 <div name="Create" class="container">
                                     <form action="actionPOST.php" method="post">
                                         <div class="form-row">
                                             <div class="form-group col-md-10">
-                                                <label for="nameEvent">Name</label>
-                                                <input type="text" class="form-control" name="nameEvent">
+                                                <label for="nameEvent">Nombre del Producto</label>
+                                                <input type="text" class="form-control" name="nameProduct">
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-10">
-                                                <label for="descEvent">Descripción del Evento</label>
-                                                <textarea class="form-control" name="descEvent" placeholder="Descripción breve del evento" required></textarea>
+                                                <label for="descEvent">Descripción del Producto</label>
+                                                <textarea class="form-control" name="descProduct" placeholder="Descripción breve del producto" required></textarea>
                                             </div>
                                         </div>
-                                        <div class="form-row">
-                                            <div class="form-group col-md-5">
-                                                <label for="dateEvent">Fecha</label>
-                                                <input type="date" class="form-control" name="dateEvent">
-                                            </div>
-                                            <div class="form-group col-md-5">
-                                                <label for="timeEvent">Hora</label>
-                                                <input type="time" class="form-control" name="timeEvent">
-                                            </div>
-                                        </div>
+                                        
                                         <div class="form-row">
                                             <div class="form-group col-md-3">
-                                                <label for="cost1Event">Precio Normal</label>
-                                                <input type="number" class="form-control" name="cost1Event">
+                                                <label for="cost1Event">Precio</label>
+                                                <input type="number" class="form-control" name="costProduct">
                                             </div>
-                                            <div class="form-group col-md-3">
-                                                <label for="cost2Event">Precio VIP</label>
-                                                <input type="number" class="form-control" name="cost2Event">
-                                            </div>
+                                            
                                             <div class="form-group col-md-4">
-                                                <label for="nArtist">Número de Artista</label>
-                                                <select class="custom-select" name="nArtist">
-                                                    <option value="0">Número</option>
+                                                <label for="nArtist">Artista</label>
+                                                <select class="custom-select" name="Artist">
+                                                    <option value="0">Seleccione el Artista</option>
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
                                                     <option value="3">3</option>
@@ -346,19 +334,13 @@
                                             <div class="form-group col-md-5">
                                             <label for="imgEvent">Imagen del Evento (Exibición [237x237px])</label>
                                                 <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="imgEvent">
+                                                    <input type="file" class="custom-file-input" id="imgProduct">
                                                     <label class="custom-file-label" for="customFile">Elije un archivo (.jpg)</label>
                                                 </div>
                                             </div>
-                                            <div class="form-group col-md-5">
-                                            <label for="inputCity">Imagen del Evento (Venta [450x450px])</label>
-                                                <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="customFile">
-                                                    <label class="custom-file-label" for="customFile">Elije un archivo (.jpg)</label>
-                                                </div>
-                                            </div>
+                                            
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Registrar Evento</button>
+                                        <button type="submit" class="btn btn-primary">Registrar Producto</button>
                                     </form>
                                 </div>
                                 <?php
@@ -471,68 +453,65 @@
                                 <?php
                                 break;
                             case 'post':
-                                echo '<h4>REALIZA NUEVO REGISTROS</h4>'; ?>
+                                echo '<h4>REALIZA NUEVOS REGISTROS</h4>'; ?>
         
                                 <div name="Create" class="container">
                                     <form action="actionPOST.php" method="post">
                                         <div class="form-row">
                                             <div class="form-group col-md-10">
-                                                <label for="nameEvent">Name</label>
-                                                <input type="text" class="form-control" name="nameEvent">
+                                                <label for="nameEvent">Nombre</label>
+                                                <input type="text" class="form-control" name="firstnameUser">
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-10">
-                                                <label for="descEvent">Descripción del Evento</label>
-                                                <textarea class="form-control" name="descEvent" placeholder="Descripción breve del evento" required></textarea>
+                                                <label for="nameEvent">Apellidos</label>
+                                                <input type="text" class="form-control" name="lastnameUser">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-10">
+                                                <label for="nameEvent">Username</label>
+                                                <input type="text" class="form-control" name="nameUser">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-10">
+                                                <label for="nameEvent">Email</label>
+                                                <input type="email" class="form-control" name="emailUser">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-10">
+                                                <label for="nameEvent">Contraseña</label>
+                                                <input type="password" class="form-control" name="passUser">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-10">
+                                                <label for="nameEvent">Confirmar Contraseña</label>
+                                                <input type="password" class="form-control" name="CpassUser">
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-5">
-                                                <label for="dateEvent">Fecha</label>
-                                                <input type="date" class="form-control" name="dateEvent">
-                                            </div>
-                                            <div class="form-group col-md-5">
-                                                <label for="timeEvent">Hora</label>
-                                                <input type="time" class="form-control" name="timeEvent">
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="form-group col-md-3">
-                                                <label for="cost1Event">Precio Normal</label>
-                                                <input type="number" class="form-control" name="cost1Event">
-                                            </div>
-                                            <div class="form-group col-md-3">
-                                                <label for="cost2Event">Precio VIP</label>
-                                                <input type="number" class="form-control" name="cost2Event">
+                                                <label for="dateEvent">Telefóno</label>
+                                                <input type="tel" class="form-control" name="phoneUser">
                                             </div>
                                             <div class="form-group col-md-4">
-                                                <label for="nArtist">Número de Artista</label>
-                                                <select class="custom-select" name="nArtist">
-                                                    <option value="0">Número</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
+                                                <label for="nArtist">Rol</label>
+                                                <select class="custom-select" name="rolUser">
+                                                    <option value="0" disabled selected>Rol de usuario</option>
+                                                    <option value="1">Súper Admin</option>
+                                                    <option value="2">Eventos</option>
+                                                    <option value="3">Tienda</option>
+                                                    <option value="4">Contacto</option>
+                                                    <option value="5">Cliente</option>
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="form-row">
-                                            <div class="form-group col-md-5">
-                                            <label for="imgEvent">Imagen del Evento (Exibición [237x237px])</label>
-                                                <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="imgEvent">
-                                                    <label class="custom-file-label" for="customFile">Elije un archivo (.jpg)</label>
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-md-5">
-                                            <label for="inputCity">Imagen del Evento (Venta [450x450px])</label>
-                                                <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="customFile">
-                                                    <label class="custom-file-label" for="customFile">Elije un archivo (.jpg)</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary">Registrar Evento</button>
+                                        
+                                        <button type="submit" class="btn btn-primary">Registrar Usuario</button>
                                     </form>
                                 </div>
                                 
