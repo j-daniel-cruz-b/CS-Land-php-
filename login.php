@@ -18,7 +18,8 @@ if(isset($_SESSION['user'])){
         //echo "usuario validado";
         $userSession->setCurrentUser($userForm);
         $user->setUser($userForm);
-        $_SESSION["name"] = $user->getNombre();
+        $_SESSION['name'] = $user->getNombre();
+        $_SESSION['usuarioID'] = $user->getId();
 
         include_once 'tienda.php';
     }else{
@@ -30,7 +31,7 @@ if(isset($_SESSION['user'])){
 }else{
     //echo "Login";
     $errorLogin = "NO HAY SESIÓN";
-    include_once '../login/actionLogin.php';
+    include_once 'login/actionLogin.php';
 
 }
 

@@ -6,6 +6,7 @@ class User extends DB{
 
     private $nombre;
     private $usuario;
+    private $id;
 
     public function userExists($user, $pass){
         $md5pass = md5($pass);
@@ -27,11 +28,16 @@ class User extends DB{
         foreach ($query as $currentUser) {
             $this->nombre = $currentUser['firstnameU'].' '.$currentUser['lastnameU'];
             $this->usuario = $currentUser['nameU'];
+            $this->id = $currentUser['idU'];
         }
     }
 
     public function getNombre(){
         return $this->nombre;
+    }
+
+    public function getId(){
+        return $this->id;
     }
 }
 

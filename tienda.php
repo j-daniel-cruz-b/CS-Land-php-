@@ -7,10 +7,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CS Land | Tienda</title>
-        <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/styles.css">
-        <link rel="icon" href="img/icono.png">
+        <?php
+        include_once 'includes/templates/header.php';
+        ?>
     </head>
 
     <body>
@@ -24,47 +23,43 @@
                 <h1 class="texto-titulo">TIENDA</h1>
             </div>
         </header>
-
+        <!-- </section> -->
         <section class="seccion contenedor">
             <h2 class="contenedor centrar-texto">Nuevos Productos</h2>
             <div class="vista-tienda">
-                <div class="producto">
-                    <div class="imagen-prod">
-                        <img src="img/beyonce-tienda-home.png" alt="" srcset="">
-                    </div>
-                    <div class="texto-prod">
-                        <h4>Playera Oficial del Album "Black is King"</h4>
-                        <p>Playera en tallas S/M/L. Oficial. Varios Colores</p>
-                        <p class="precio">$900.00</p>
-                    </div>
-                    <a class="boton-base boton-azul" href=""> Comprar</a>
+                <?php 
+                    try {
+                        require_once ('includes/functions/db_connection-regular.php');
+                        $sql = $sql = " SELECT `idP`, `nameP`,`costP`,`imgP`,`descP`,`nameA` FROM `product`
+                        INNER JOIN artist
+                        ON artist.idA = product.ArtistidA";
+                        $res = $connection->query($sql);
+                    } catch (\Exception $e) {
+                        echo $connection->error;
+                    }
+                    $products = $res->fetch_all();
+                    
+                    // echo var_dump($products);
+                    foreach ($products as $product) {
+                        echo '
+                            <div class="producto">
+                                <div class="imagen-prod">
+                                    <img src="img/'.$product[3].'" alt="" srcset="">
+                                </div>
+                                <div class="texto-prod">
+                                    <h4>'.$product[1].'</h4>
+                                    <p>'.$product[4].'</p>
+                                    <p class="precio">'.$product[2].'</p>
+                                </div>
+                                <a class="boton-base boton-azul" href="tienda/venta.php?producto='.$product[0].'"> Comprar</a>
+                            </div>
+                        ';
+                    }
+                ?>
                 </div>
-                <div class="producto">
-                    <div class="imagen-prod">
-                        <img src="img/sia-tienda-home.jpg" alt="" srcset="">
-                    </div>
-                    <div class="texto-prod">
-                        <h4>Some People Have Real Problems T-Shirt</h4>
-                        <p>Playera en tallas S/M/L. Semi Oficial. Varios Colores</p>
-                        <p class="precio">$300.00</p>
-                    </div>
-                    <a class="boton-base boton-azul" href=""> Comprar</a>
-                </div>
-                <div class="producto">
-                    <div class="imagen-prod">
-                        <img src="img/harry-tienda-home.jpg" alt="" srcset="">
-                    </div>
-                    <div class="texto-prod">
-                        <h4>Fine Line Playera Negra</h4>
-                        <p>Playera en tallas S/M/L. Oficial. Limitada</p>
-                        <p class="precio">$650.00</p>
-                    </div>
-                    <a class="boton-base boton-azul" href=""> Comprar</a>
-                </div>
-            </div>
         </section>
-        <hr>
-        <main class="contenedor">
+        <!-- <hr> -->
+        <!-- <main class="contenedor">
             <h1 class="centrar-texto">Lo MAS Comprado</h1>
             <div class="contenido-lo-mas-comprado">
                 <div class="texto-t1">
@@ -158,7 +153,7 @@
                     <a class="boton-base boton-azul" href="">Comprar</a>
                 </div>
             </div>
-        </section>
+        </section>  -->
 
         <?php
     include_once 'includes/templates/footer.php';
