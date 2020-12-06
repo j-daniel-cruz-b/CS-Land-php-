@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="admin.php">Home</a>
+    <a class="navbar-brand" href="../admin.php">Home</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -9,9 +9,9 @@
                 Consultas
             </button>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="results.php?entity=evento&action=get">Eventos</a>
-                <a class="dropdown-item" href="results.php?entity=producto&action=get">Productos</a>
-                <a class="dropdown-item" href="results.php?entity=usuario&action=get">Usuarios</a>
+                <a class="dropdown-item" href="../results.php?entity=evento&action=get">Eventos</a>
+                <a class="dropdown-item" href="../results.php?entity=producto&action=get">Productos</a>
+                <a class="dropdown-item" href="../results.php?entity=usuario&action=get">Usuarios</a>
             </div>
         </div>
         <div class="dropdown">
@@ -19,9 +19,9 @@
                 Registros
             </button>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="results.php?entity=evento&action=post">Eventos</a>
-                <a class="dropdown-item" href="results.php?entity=producto&action=post">Productos</a>
-                <a class="dropdown-item" href="results.php?entity=usuario&action=post">Usuarios</a>
+                <a class="dropdown-item" href="../results.php?entity=evento&action=post">Eventos</a>
+                <a class="dropdown-item" href="../results.php?entity=producto&action=post">Productos</a>
+                <a class="dropdown-item" href="../results.php?entity=usuario&action=post">Usuarios</a>
             </div>
         </div>
         <div class="dropdown">
@@ -29,9 +29,9 @@
                 Actualizaciones
             </button>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="results.php?entity=evento&action=put">Eventos</a>
-                <a class="dropdown-item" href="results.php?entity=producto&action=put">Productos</a>
-                <a class="dropdown-item" href="results.php?entity=usuario&action=put">Usuarios</a>
+                <a class="dropdown-item" href="../results.php?entity=evento&action=put">Eventos</a>
+                <a class="dropdown-item" href="../results.php?entity=producto&action=put">Productos</a>
+                <a class="dropdown-item" href="../results.php?entity=usuario&action=put">Usuarios</a>
             </div>
         </div>
         <div class="dropdown">
@@ -39,13 +39,14 @@
                 Eliminaciones
             </button>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="results.php?entity=evento&action=delete">Eventos</a>
-                <a class="dropdown-item" href="results.php?entity=producto&action=delete">Productos</a>
-                <a class="dropdown-item" href="results.php?entity=usuario&action=delete">Usuarios</a>
-            </div>        </div>
+                <a class="dropdown-item" href="../results.php?entity=evento&action=delete">Eventos</a>
+                <a class="dropdown-item" href="../results.php?entity=producto&action=delete">Productos</a>
+                <a class="dropdown-item" href="../results.php?entity=usuario&action=delete">Usuarios</a>
+            </div>
+        </div>
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="../nosotros.php">Acerca De</a>
+                    <a class="nav-link" href="../../nosotros.php">Acerca De</a>
                 </li>
             </ul>
     </div>

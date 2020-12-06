@@ -9,13 +9,14 @@
     <a href="contacto.php">Contacto</a>
 </nav>
 <?php 
+
+session_start();
+
 if (isset($_SESSION['user'])) {
-    echo '<p> ['.$user->getNombre().'] </p>';
-} else {
-    // echo '<p> ['.$user->getNombre().'] </p>';
+    echo '<p> ['.$_SESSION['name'].'] </p>';
 }
 ?>
-<!-- <a href="login.php">
+<a href="login.php">
     <img src="./img/login.png" alt="login">
-</a> -->
+</a>
 </div>

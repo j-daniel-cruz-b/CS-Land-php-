@@ -20,6 +20,7 @@
             <?php 
                 $entidad = ($_GET['entity']);
                 echo strtoupper($entidad);
+                $ids;
             ?>
         </h1>
         <div>
@@ -32,33 +33,15 @@
                                 
                                 <div name="Read" class="container">
                                     <?php 
-                                        $sql = '';
                                         $columnas = 0;
-                                        switch ($entidad) {
-                                            case 'evento':
-                                                $sql = " SELECT idE, nameE, nameA, descE, dateE, timeE, cost1, cost2
-                                                FROM `eventassignament`
-                                                INNER JOIN evento
-                                                ON eventassignament.EventidE = evento.idE
-                                                INNER JOIN artist
-                                                ON eventassignament.ArtistidA = artist.idA 
-                                                ORDER BY dateE";
-                                                $columnas = 8;
-                                                break;
-                                            case 'producto':
-                                                $sql = "SELECT idP, nameP, descP, costP, ArtistidA
-                                                FROM `product`
-                                                ORDER BY idP";
-                                                $columnas = 5;
-                                                break; 
-                                            case 'usuario':
-                                                $sql = "SELECT * FROM `user`";
-                                                $columnas = 8;
-                                                break;           
-                                            default:
-                                                # code...
-                                                break;
-                                        }
+                                        $sql = " SELECT idE, nameE, nameA, descE, dateE, timeE, cost1, cost2
+                                        FROM `eventassignament`
+                                        INNER JOIN evento
+                                        ON eventassignament.EventidE = evento.idE
+                                        INNER JOIN artist
+                                        ON eventassignament.ArtistidA = artist.idA 
+                                        ORDER BY dateE";
+                                        $columnas = 8;
                                     
                                         try {
                                             require_once ('../includes/functions/db_connection-regular.php');
@@ -122,9 +105,9 @@
                                 break;
                             case 'post':
                                 echo '<h4>REALIZA NUEVOS REGISTROS</h4>'; ?>
-        
+
                                 <div name="Create" class="container">
-                                    <form action="actionPOST.php" method="post">
+                                    <form action="actions/actionPOST.php" method="post">
                                         <div class="form-row">
                                             <div class="form-group col-md-5">
                                                 <!-- <label for="nameEvent">Nombre del Producto</label> -->
@@ -165,14 +148,15 @@
                                                 <select class="custom-select" name="nArtist" required>
                                                     <option value="0" disabled selected>Número</option>
                                                     <?php 
-                                                         try {
+                                                        try {
                                                             require_once ('../includes/functions/db_connection-regular.php');
                                                             $sql = "SELECT * FROM `artist` ORDER BY `artist`.`idA` ASC";
-                                                            $res = $connection->query($sql);
+                                                            $resids = $connection->query($sql);
                                                         } catch (\Exception $e) {
                                                             echo $connection->error;
                                                         }
-                                                        $ids = $res->fetch_all();
+                                                        $ids = $resids->fetch_all();
+                                                        
                                                         foreach($ids as $id) {
                                                             echo '<option value="'.$id[0].'">'.$id[0].' - '.$id[1].'</option>';
                                                         
@@ -202,14 +186,92 @@
                                         <button type="submit" class="btn btn-primary">Registrar Evento</button>
                                     </form>
                                 </div>
+                                
                                 <?php
                                 break;
                             case 'put':
-                                echo 'REALIZA UN NUEVO REGISTRO'; ?>
+                                echo '<h4>ACTUALIZA LOS REGISTROS</h4>'; ?>
+
+                                <div name="Update" class="container">
+                                    <form method="get">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-5">
+                                                <input type="text" class="form-control" value="Evento" name="entity" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="nArtist">Selecciona un Evento para editar </label>
+                                                <div  class="list-group" name="nArtist">
+                                                    <?php 
+                                                        try {
+                                                            require_once ('../includes/functions/db_connection-regular.php');
+                                                            $sql = $sql = " SELECT idE, nameE, nameA
+                                                            FROM `eventassignament`
+                                                            INNER JOIN evento
+                                                            ON eventassignament.EventidE = evento.idE
+                                                            INNER JOIN artist
+                                                            ON eventassignament.ArtistidA = artist.idA
+                                                            ORDER BY idE";
+                                                            $resevs = $connection->query($sql);
+                                                        } catch (\Exception $e) {
+                                                            echo $connection->error;
+                                                        }
+                                                        $evs = $resevs->fetch_all();
+                                                        foreach ($evs as $event) {
+                                                            echo '<a class="list-group-item list-group-item-action" href="actions/preActionPUT.php?entity=evento&evento='.$event[0].'">'.$event[0].' - '.$event[1].'</a>';
+                                                        }
+                                                    ?>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            
+                                    </form>
+                                </div>
+                                
+                                
                                 <?php
                                 break;
-                            case 'detele':
-                                echo 'REALIZA UN NUEVO REGISTRO'; ?>
+                            case 'delete':
+                                echo 'ELIMNA UN NUEVO REGISTRO'; ?>
+
+                                <div name="Delete" class="container">
+                                    <form method="detele">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-5">
+                                                <input type="text" class="form-control" value="Evento" name="entity" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="nArtist">Selecciona un Evento para editar </label>
+                                                <div  class="list-group" name="nArtist">
+                                                    <?php 
+                                                        try {
+                                                            require_once ('../includes/functions/db_connection-regular.php');
+                                                            $sql = $sql = " SELECT idE, nameE, nameA
+                                                            FROM `eventassignament`
+                                                            INNER JOIN evento
+                                                            ON eventassignament.EventidE = evento.idE
+                                                            INNER JOIN artist
+                                                            ON eventassignament.ArtistidA = artist.idA
+                                                            ORDER BY idE";
+                                                            $resevs = $connection->query($sql);
+                                                        } catch (\Exception $e) {
+                                                            echo $connection->error;
+                                                        }
+                                                        $evs = $resevs->fetch_all();
+                                                        foreach ($evs as $event) {
+                                                            echo '<a class="list-group-item list-group-item-action" href="actions/preActionDelete.php?entity=evento&evento='.$event[0].'">'.$event[0].' - '.$event[1].'</a>';
+                                                        }
+                                                    ?>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            
+                                    </form>
+                                </div>
+                                
                                 <?php
                                 break;
                         }
@@ -315,7 +377,7 @@
                                 echo '<h4>REALIZA NUEVOS REGISTROS</h4>'; ?>
         
                                 <div name="Create" class="container">
-                                    <form action="actionPOST.php" method="post">
+                                    <form action="actions/actionPOST.php" method="post">
                                         <div class="form-row">
                                             <div class="form-group col-md-5">
                                                 <!-- <label for="nameEvent">Nombre del Producto</label> -->
@@ -376,11 +438,75 @@
                                 <?php
                                 break;
                             case 'put':
-                                echo 'REALIZA UN NUEVO REGISTRO'; ?>
+                                echo '<h4>ACTUALIZA LOS REGISTROS</h4>'; ?>
+
+                                <div name="Update" class="container">
+                                    <form method="get">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-5">
+                                                <input type="text" class="form-control" value="Producto" name="entity" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="nArtist">Selecciona un Product para editar </label>
+                                                <div  class="list-group" name="nArtist">
+                                                    <?php 
+                                                        try {
+                                                            require_once ('../includes/functions/db_connection-regular.php');
+                                                            $sql = $sql = " SELECT * FROM `product` ORDER BY `idP` ASC";
+                                                            $resevs = $connection->query($sql);
+                                                        } catch (\Exception $e) {
+                                                            echo $connection->error;
+                                                        }
+                                                        $evs = $resevs->fetch_all();
+                                                        foreach ($evs as $event) {
+                                                            echo '<a class="list-group-item list-group-item-action" href="actions/preActionPUT.php?entity=producto&producto='.$event[0].'">'.$event[0].' - '.$event[1].'</a>';
+                                                        }
+                                                    ?>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            
+                                    </form>
+                                </div>
+                                
                                 <?php
                                 break;
-                            case 'detele':
+                            case 'delete':
                                 echo 'REALIZA UN NUEVO REGISTRO'; ?>
+
+                                <div name="Update" class="container">
+                                    <form method="get">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-5">
+                                                <input type="text" class="form-control" value="Producto" name="entity" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="nArtist">Selecciona un Product para editar </label>
+                                                <div  class="list-group" name="nArtist">
+                                                    <?php 
+                                                        try {
+                                                            require_once ('../includes/functions/db_connection-regular.php');
+                                                            $sql = $sql = " SELECT * FROM `product` ORDER BY `idP` ASC";
+                                                            $resevs = $connection->query($sql);
+                                                        } catch (\Exception $e) {
+                                                            echo $connection->error;
+                                                        }
+                                                        $evs = $resevs->fetch_all();
+                                                        foreach ($evs as $event) {
+                                                            echo '<a class="list-group-item list-group-item-action" href="actions/preActionDELETE.php?entity=producto&producto='.$event[0].'">'.$event[0].' - '.$event[1].'</a>';
+                                                        }
+                                                    ?>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            
+                                    </form>
+                                </div>
+
                                 <?php
                                 break;
                         }
@@ -392,33 +518,8 @@
                                 
                                 <div name="Read" class="container">
                                     <?php 
-                                        $sql = '';
-                                        $columnas = 0;
-                                        switch ($entidad) {
-                                            case 'evento':
-                                                $sql = " SELECT idE, nameE, nameA, descE, dateE, timeE, cost1, cost2
-                                                FROM `eventassignament`
-                                                INNER JOIN evento
-                                                ON eventassignament.EventidE = evento.idE
-                                                INNER JOIN artist
-                                                ON eventassignament.ArtistidA = artist.idA 
-                                                ORDER BY dateE";
-                                                $columnas = 8;
-                                                break;
-                                            case 'producto':
-                                                $sql = "SELECT idP, nameP, descP, costP, ArtistidA
-                                                FROM `product`
-                                                ORDER BY idP";
-                                                $columnas = 5;
-                                                break; 
-                                            case 'usuario':
-                                                $sql = "SELECT * FROM `user`";
-                                                $columnas = 8;
-                                                break;           
-                                            default:
-                                                # code...
-                                                break;
-                                        }
+                                        $sql = "SELECT * FROM `user`";
+                                        $columnas = 8;
                                     
                                         try {
                                             require_once ('../includes/functions/db_connection-regular.php');
@@ -486,7 +587,7 @@
                                 echo '<h4>REALIZA NUEVOS REGISTROS</h4>'; ?>
         
                                 <div name="Create" class="container">
-                                    <form action="actionPOST.php" method="post">
+                                    <form action="actions/actionPOST.php" method="post">
                                         <div class="form-row">
                                             <div class="form-group col-md-5">
                                                 <!-- <label for="nameEvent">Nombre del Producto</label> -->
@@ -540,12 +641,12 @@
                                                         try {
                                                             require_once ('../includes/functions/db_connection-regular.php');
                                                             $sql = "SELECT * FROM `role` ORDER BY `role`.`idR` ASC";
-                                                            $res = $connection->query($sql);
+                                                            $resRole = $connection->query($sql);
                                                             } catch (\Exception $e) {
                                                                 echo $connection->error;
                                                             }
-                                                            $ids = $res->fetch_all();
-                                                            foreach($ids as $id) {
+                                                            $roles = $resRole->fetch_all();
+                                                            foreach($roles as $id) {
                                                                 echo '<option value="'.$id[0].'">'.$id[0].' - '.$id[1].'</option>';
                                                             
                                                             }
@@ -562,11 +663,72 @@
                                 <?php
                                 break;
                             case 'put':
-                                echo 'REALIZA UN NUEVO REGISTRO'; ?>
+                                echo '<h4>ACTUALIZA UN REGISTRO</h4>'; ?>
+                                <div name="Update" class="container">
+                                    <form method="get">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-5">
+                                                <input type="text" class="form-control" value="Usuario" name="entity" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="nArtist">Selecciona un Usuario para editar </label>
+                                                <div  class="list-group" name="nArtist">
+                                                    <?php 
+                                                        try {
+                                                            require_once ('../includes/functions/db_connection-regular.php');
+                                                            $sql = $sql = "SELECT * FROM `user` ORDER BY `user`.`idU` ASC";
+                                                            $resevs = $connection->query($sql);
+                                                        } catch (\Exception $e) {
+                                                            echo $connection->error;
+                                                        }
+                                                        $evs = $resevs->fetch_all();
+                                                        foreach ($evs as $event) {
+                                                            echo '<a class="list-group-item list-group-item-action" href="actions/preActionPUT.php?entity=usuario&usuario='.$event[0].'">'.$event[0].' - '.$event[1].' ['.$event[3].' '.$event[4].']</a>';
+                                                        }
+                                                    ?>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            
+                                    </form>
+                                </div>
+                                
                                 <?php
                                 break;
-                            case 'detele':
-                                echo 'REALIZA UN NUEVO REGISTRO'; ?>
+                            case 'delete':
+                                echo 'ELIMNA UN REGISTRO'; ?>
+                                <div name="Update" class="container">
+                                    <form method="get">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-5">
+                                                <input type="text" class="form-control" value="Usuario" name="entity" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="nArtist">Selecciona un Usuario para editar </label>
+                                                <div  class="list-group" name="nArtist">
+                                                    <?php 
+                                                        try {
+                                                            require_once ('../includes/functions/db_connection-regular.php');
+                                                            $sql = $sql = "SELECT * FROM `user` ORDER BY `user`.`idU` ASC";
+                                                            $resevs = $connection->query($sql);
+                                                        } catch (\Exception $e) {
+                                                            echo $connection->error;
+                                                        }
+                                                        $evs = $resevs->fetch_all();
+                                                        foreach ($evs as $event) {
+                                                            echo '<a class="list-group-item list-group-item-action" href="actions/preActionDELETE.php?entity=usuario&usuario='.$event[0].'">'.$event[0].' - '.$event[1].' ['.$event[3].' '.$event[4].']</a>';
+                                                        }
+                                                    ?>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            
+                                    </form>
+                                </div>
                                 <?php
                                 break;
                         }
