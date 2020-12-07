@@ -52,8 +52,8 @@
 
     <section class="contenedor ">
         <h1>Mi Carrito</h1>
-        <a class="boton-base boton-rosa" href="carrito.php?usser='.$_SESSION['usuarioID'].'&action=buy">Comprar</a>
-        <a class="boton-base boton-largo boton-azul" href="carrito.php?usser='.$_SESSION['usuarioID'].'&action=delete">Borrar Comprar</a>
+        
+        <!-- <a class="boton-base boton-largo boton-azul" href="carrito.php?usser='.$_SESSION['usuarioID'].'&action=delete">Borrar Comprar</a> -->
     </section>
 
     <section class="contenedor ">
@@ -66,11 +66,11 @@
                 // echo $r;
                 $columnas = 0;
                 $total = 0;
-                $sql = " SELECT `productoID`,`usuarioId`,`costoProduct`, `nameP` FROM `carrito` 
+                $sql = " SELECT `productoID`,`usuarioId`,`costoProduct`, `nameP`, `cantC` FROM `carrito` 
                 INNER JOIN product
                 ON carrito.productoID = product.idP
                 WHERE usuarioId = $idUss";
-                $columnas = 4;
+                $columnas = 5;
             
                 try {
                     require_once ('../includes/functions/db_connection-regular.php');
@@ -96,6 +96,7 @@
                         <th scope="col">ID Usuario</th>
                         <th scope="col">Prec/Unidad</th>
                         <th scope="col">Nombre Producto</th>
+                        <th scope="col">Unidades</th>
                     </tr>
                     <?php
                         // foreach ($arrayPropiedades as $propiedad) {
@@ -145,16 +146,24 @@
                         </td>
                         <td>
                         </td>
+                        <td>
+                        </td>
                     <tr>
                 </tbody>
                 </table>
             </table>
+            <?php
+            $id = $_SESSION['usuarioID'];
+        ?>
+        <?php echo '<a class="boton-base boton-rosa" href="pagarPaypal.php?usser='.$id.'&action=buy&total='.$total.'">Comprar</a>'; 
+        $_GET['productos'] = $registros;?>
+        <?php echo '<a class="boton-base boton-largo boton-rosa" href="carrito.php?usser='.$id.'&action=delete">Borrar Compra</a>' ?>
         </div>
         
         <?php
         if (isset($_GET['action'])) {
             $action = $_GET['action'];
-            var_dump($action);
+            var_dump($_GET);
             switch ($action) {
                 case 'delete':
                     $sqlDelete = "DELETE FROM `carrito`;";

@@ -134,17 +134,10 @@
                     <div class="form-row">
                         <div class="form-group col-md-5">
                         <div class="form-group">
-                            <label for="imgEvent">Imagen del Evento (Exibición [237x237px])</label>
-                            <?php echo '<br>Imagen elegida: '.$seleccion['imgE'];?>
-                            <input type="file" class="form-control-file" name="imgEvent">
+                            <label for="imgEvent">Imagen del Evento (Exibición [237x237px]), <br> Se escribirá en la carpeta img del proyecto</label>
+                            <?php echo '<input type="text" class="form-control-file" name="imgEvent" value="'.$seleccion['imgE'].'">';?>
+                            <!-- <input type="file" class="form-control-file" name="imgEvent"> -->
                         </div>
-                        </div>
-                        <div class="form-group col-md-5">
-                        <label for="inputCity">Imagen del Evento (Venta [450x450px])</label>
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile">
-                                <label class="custom-file-label" for="customFile">Elije un archivo (.jpg)</label>
-                            </div>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Actualizar Evento</button>
@@ -210,9 +203,8 @@
                         <div class="form-row">
                             <div class="form-group col-md-5">
                                 <div class="form-group">
-                                    <label for="imgProduct">Imagen del Producto (Exibición [237x237px])</label>
-                                    <?php echo '<br>Imagen elegida: '.$seleccion['imgP'];?>
-                                    <input type="file" class="form-control-file" name="imgProduct">
+                                    <label for="imgEvent">Imagen del Producto (Exibición [237x237px]), <br> Se escribirá en la carpeta img del proyecto</label>
+                                    <?php echo '<input type="text" class="form-control-file" name="imgEvent" value="'.$seleccion['imgP'].'">';?>
                                 </div>
                             </div>
                             

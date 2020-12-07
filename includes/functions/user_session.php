@@ -15,7 +15,7 @@ class UserSession{
     }
 
     public function closeSession(){
-        session_unset();
+        // session_unset();
         session_destroy();
     }
 }

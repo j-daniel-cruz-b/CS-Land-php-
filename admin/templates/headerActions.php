@@ -44,10 +44,5 @@
                 <a class="dropdown-item" href="../results.php?entity=usuario&action=delete">Usuarios</a>
             </div>
         </div>
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="../../nosotros.php">Acerca De</a>
-                </li>
-            </ul>
     </div>
 </nav>

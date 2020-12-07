@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -24,17 +24,17 @@
                 </a>
                 <div class="navegacion">
                 <nav>
-                    <a href="nosotros.php">Nosotros</a>
-                    <a href="stream.php">Stream</a>
-                    <a href="tienda.php">Tienda</a>
-                    <a href="contacto.php">Contacto</a>
+                    <a href="../nosotros.php">Nosotros</a>
+                    <a href="../stream.php">Stream</a>
+                    <a href="../tienda.php">Tienda</a>
+                    <a href="../contacto.php">Contacto</a>
                 </nav>
                 <?php 
 
                 session_start();
 
                 if (isset($_SESSION['user'])) {
-                    echo '<p> ['.$_SESSION['usuarioID'].' '.$_SESSION['name'].'] </p>';
+                    echo '<p> ['.$_SESSION['usuarioID'].' - '.$_SESSION['name'].'] </p>';
                     echo ' <a href="carrito.php">
                     Carrito
                     </a>';
@@ -71,7 +71,7 @@
         // foreach ($products as $product) { ?>
         <div class="evento">
         <?php
-        echo '<img class="imagen" src="../img/harry-tienda-home.jpg" alt="" srcset="">'.
+        echo '<img class="imagen ml-5" src="../img/tienda/'.$product['imgP'].'" alt="" srcset="">'.
         '<div class="texto-evento">'.
         
         '<input type="text" name="nameProduct" rows="1" colums="5" value="'.$product['nameP'].'" readonly></input>'.
@@ -87,34 +87,8 @@
         '<input type="number" name="unidades" value="1"></div>'.
         '<button type="submit" class="boton-base boton-rosa mr-5">Agregar al Carrito</button>'.
         '</div>';
-        // if ($_SESSION['addcarrito'] == "ok") {
-        //     echo '<h3>AGREGADO</h3>';
-        // }
         ?>                            
-        </div>
-        <?php
-        
-        // }
-
-        // echo var_dump($products);
-        // foreach ($products as $product) {
-            // echo '
-            // <img src="../img/t'.$product['imgP'].'" alt="">
-            // <div class="">
-            //     <div class="texto-articulo">
-            //         <h3>'.$product['nameP'].'</h3>
-            //         <p>Desde '.$product['costP'].'</p>
-            //     </div>
-            //     <div class="comprar-articulo">
-            //         <label for="unidades">Unidades</label>
-            //         <input type="number" id="unidades">
-            //         <a class="boton-base boton-rosa " herf=" ">Comprar</a>
-            //     </div>
-            // </div>
-            // ';
-        // }
-    ?>
-    
+        </div>    
     </form>
     </section>
 
@@ -127,7 +101,7 @@
             $sql = $sql = " SELECT `idP`, `nameP`,`costP`,`imgP`,`descP`,`nameA` FROM `product`
             INNER JOIN artist
             ON artist.idA = product.ArtistidA
-            LIMIT 4";
+            LIMIT 3";
             $res = $connection->query($sql);
         } catch (\Exception $e) {
             echo $connection->error;
@@ -137,9 +111,9 @@
         // echo var_dump($products);
         foreach ($products as $product) {
             echo '
-            <div class="producto-t">
+            <div class="producto">
                 <div class="imagen-prod">
-                    <img src="img/'.$product[3].'" alt="" srcset="">
+                    <img src="../img/tienda/'.$product[3].'" alt="" srcset="">
                 </div>
                 <div class="texto-prod">
                     <h4>'.$product[1].'</h4>

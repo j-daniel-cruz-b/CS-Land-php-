@@ -19,8 +19,8 @@ $subTotal = $cost * $units;
 // $cost2Event = $resultado['cost2Event'];
 // $imgEvent = $resultado['imgEvent'];
 // $artist = $resultado['nArtist'];
-$sql = "INSERT INTO `carrito` (`productoID`, `usuarioId`, `costoProduct`) 
-VALUES ($idProduct, $idUser, $subTotal)";
+$sql = "INSERT INTO `carrito` (`productoID`, `usuarioId`, `costoProduct`, `cantC`) 
+VALUES ($idProduct, $idUser, $subTotal, $units)";
 try {
     require_once ('../includes/functions/db_connection-regular.php');
     $res = $connection->query($sql);

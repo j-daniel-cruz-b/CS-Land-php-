@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
 
@@ -27,23 +27,21 @@
             <h2 class="centrar-texto">Eventos Estelares</h2>
 
             <div class="evento-e1">
-                <div class="contenido-eventoE" style="background-image: url(img/adele-evento-estelar.jpg);">
-                <!-- <img src="img/adele-evento-estelar.jpg" alt="Logotipo de CS Land"> -->
-                    <!-- background-image: url(/img/adele-evento-estelar.jpg); -->
-                    <p background="img/adele-evento-estelar.jpg">BTS MAP OF THE SOUL ON:E</p>
-                    <a class="boton-base boton-azul" href="./eventos/1.html">Ir a Evento</a>
+                <div class="contenido-eventoE" style="background-image: url(img/bts-evento-estelar.jpg);">
+                    <p>BTS MAP OF THE SOUL ON:E</p>
+                    <a class="boton-base boton-azul mb-5" href="./eventos/1.html">Ir a Evento</a>
                 </div>
             </div>
             <div class="evento-e2">
-                <div class="contenido-eventoE">
+                <div class="contenido-eventoE" style="background-image: url(img/adele-evento-estelar.jpg);">
                     <p>ADELE LIVE IN NEW YORK CITY 2020</p>
-                    <a class="boton-base boton-azul" href="./eventos/2.html">Ir a Evento</a>
+                    <a class="boton-base boton-azul mb-5" href="./eventos/2.html">Ir a Evento</a>
                 </div>
             </div>
             <div class="evento-e3">
-                <div class="contenido-eventoE">
+                <div class="contenido-eventoE" style="background-image: url(img/billie-concert-estelar.jpg);">
                     <p>Billie Eilish When We All Fall Asleep Tour</p>
-                    <a class="boton-base boton-azul" href="./eventos/3.html">Ir a Evento</a>
+                    <a class="boton-base boton-azul mb-5" href="./eventos/3.html">Ir a Evento</a>
                 </div>
             </div>
         </section>

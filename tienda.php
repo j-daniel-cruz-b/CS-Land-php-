@@ -44,7 +44,7 @@
                         echo '
                             <div class="producto">
                                 <div class="imagen-prod">
-                                    <img src="img/'.$product[3].'" alt="" srcset="">
+                                    <img src="img/tienda/'.$product[3].'" alt="" srcset="">
                                 </div>
                                 <div class="texto-prod">
                                     <h4>'.$product[1].'</h4>

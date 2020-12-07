@@ -15,8 +15,8 @@
     <header class="site-header">
         <div class="contenido-header">
             <div class="navbar">
-            <a class="icono contenedor" href="../index.php">
-                <img src="../img/icono.png" alt="Logotipo de CS Land">
+            <a class="icono contenedor" href="index.php">
+                <img src="img/icono.png" alt="Logotipo de CS Land">
                 </a>
                 <div class="navegacion">
                 <nav>
@@ -25,14 +25,6 @@
                     <a href="tienda.php">Tienda</a>
                     <a href="contacto.php">Contacto</a>
                 </nav>
-                <?php 
-
-                // session_start();
-
-                if (isset($_SESSION['user'])) {
-                    echo '<p> ['.$_SESSION['name'].'] </p>';
-                }
-                ?>
                 <a href="login.php">
                     <img src="./img/login.png" alt="login">
                 </a>
@@ -53,37 +45,12 @@
             ?>
                 <fieldset class="centrar-texto">
                     <legend>Escriba Correctamente sus credenciales</legend>
-                    <label for="email">Email</label> <input name="email" type="email" placeholder="Correo Electronico">
+                    <label for="email">Nombre de Usuario</label> <input name="email" type="text" placeholder="Correo Electronico">
                     <label for="contraseña">Contraseña</label> <input name="contraseña" type="password" placeholder="Contraseña">
-                    <a href="index.html">¿Olvidó su contraseña?</a>
+                    <a href="login/registro.php">Soy nuevo :D</a>
                 </fieldset>
                 <input type="submit" value="Iniciar Sesión" class="boton-base boton-azul">
     </section>
-
-    <main class="contenedor-contacto seccion ">
-        
-            <h3>O si aún no se une a la familia, REGISTRESE</h3>
-            <fieldset>
-
-                <legend>Información Personal</legend>
-                <label for="nombre">Nombre</label> <input id="nombre" type="text" placeholder="Nombre Completo">
-                <label for="email">Email</label> <input id="email" type="email" placeholder="Correo Electronico">
-                <label for="contrasena">Contraseña</label> <input id="contrasena " type="password" placeholder="Contraseña">
-                <label for="contrasena">Confirmar Contraseña</label> <input id="contrasena " type="password" placeholder="Contraseña">
-                <label for="telefono">Teléfono</label> <input id="telefono " type="tel" placeholder="Telefono Móvil">
-            </fieldset>
-
-            <fieldset>
-                <legend>Información de Ubicación</legend>
-                <label for="cp">Codigo Postal</label> <input id="cp" type="text" placeholder="Codigo Postal">
-                <label for="Ciudad">Ciudad</label> <input id="Ciudad" type="text" placeholder="Ciudad">
-                <label for="Estado">Estado</label> <input id="Estado" type="text" placeholder="Estado">
-                <label for="País">País</label> <input id="País" type="text" placeholder="País">
-            </fieldset>
-            <input type="submit" value="Registrarse" class="boton-base boton-rosa">
-        </form>
-    </main>
-
 
     <?php
     include_once 'includes/templates/footer.php';

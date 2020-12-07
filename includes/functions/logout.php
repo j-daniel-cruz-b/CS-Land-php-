@@ -4,6 +4,8 @@
     $userSession = new UserSession();
     $userSession->closeSession();
 
-    header("location: ../index.php");
+    echo '<script>
+    window.location="../../index.php";
+    </script>';
 
 ?>
