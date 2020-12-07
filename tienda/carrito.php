@@ -16,8 +16,8 @@
 </head>
 
 <body>
-<header class="site-header">
-        <div class="contenido-header">
+<header class="site-header tienda">
+        <div class="contenido-header contacto">
             <div class="navbar">
             <a class="icono contenedor" href="../index.php">
                 <img src="../img/icono.png" alt="Logotipo de CS Land">
@@ -154,10 +154,13 @@
             </table>
             <?php
             $id = $_SESSION['usuarioID'];
+            if ($total == 0){
+                echo '<a class="boton-base boton-largo boton-rosa" href="carrito.php?usser='.$id.'&action=delete">Borrar Compra</a>' ;
+            } else {
+                echo '<a class="boton-base boton-rosa" href="pagarPaypal.php?usser='.$id.'&action=buy&total='.$total.'">Comprar</a>';
+                echo '<a class="boton-base boton-largo boton-rosa" href="carrito.php?usser='.$id.'&action=delete">Borrar Compra</a>' ;
+            }
         ?>
-        <?php echo '<a class="boton-base boton-rosa" href="pagarPaypal.php?usser='.$id.'&action=buy&total='.$total.'">Comprar</a>'; 
-        $_GET['productos'] = $registros;?>
-        <?php echo '<a class="boton-base boton-largo boton-rosa" href="carrito.php?usser='.$id.'&action=delete">Borrar Compra</a>' ?>
         </div>
         
         <?php

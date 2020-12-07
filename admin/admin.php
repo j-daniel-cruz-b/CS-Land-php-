@@ -1,20 +1,18 @@
 <?php 
-    if (isset($_SESSION['user'])) {
-        if($_SESSION['role'] == 5){
-        echo '<script>
-        window.location="../index.php";
-        </script>';
-        } else {
-            echo '<script>
-        window.location="admin.php";
-        </script>';
-        }
-    } else {
-        echo '<script>
-        window.location="../index.php";
-        </script>';
-        session_start();
-    }
+    // session_start();
+    // if (isset($_SESSION['user']) && $_SESSION['role'] != 5) {
+    //     echo '<script>
+    //     window.location="admin.php";
+    //     </script>';
+    // } else {        
+    //     echo '<script>
+    //     window.location="../index.php";
+    //     </script>';
+        // echo '<script>
+        // window.location="../index.php";
+        // </script>';
+    //     session_start();
+    // }
 ?>
 <!DOCTYPE html>
 <html lang="en">

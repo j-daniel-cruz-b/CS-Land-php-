@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <header class="site-header">
+    <header class="site-header contacto">
         <div class="contenido-header">
             <div class="navbar">
             <a class="icono contenedor" href="../index.php">

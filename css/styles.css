@@ -394,7 +394,7 @@ footer {
     /* flex-basis: calc(40% - 2rem); */
     padding: 0;
     border: 5px solid white;
-    background-image: url(/img/adele-blog.jpg);
+    background-image: url(../img/adele-blog.jpg);
     background-position: center center;
     background-size: cover;
     border-radius: 0rem 7rem 0rem 7rem;

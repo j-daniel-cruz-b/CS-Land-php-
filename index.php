@@ -82,7 +82,7 @@
                         }
                     }
                 }
-                $connection->close();
+                // $connection->close();
             ?>
         </div>
     </section>
@@ -127,39 +127,36 @@
     <section class="seccion contenedor">
         <h2 class="contenedor centrar-texto">Nuevos Productos</h2>
         <div class="vista-tienda">
-            <div class="producto">
-                <div class="imagen-prod">
-                    <img src="img/beyonce-tienda-home.png" alt="" srcset="">
-                </div>
-                <div class="texto-prod">
-                    <h4>Playera Oficial del Album "Black is King"</h4>
-                    <p>Playera en tallas S/M/L. Oficial. Varios Colores</p>
-                    <p class="precio">$900.00</p>
-                </div>
-                <a class="boton-base boton-azul" href=""> Ver en Tienda</a>
-            </div>
-            <div class="producto">
-                <div class="imagen-prod">
-                    <img src="img/sia-tienda-home.jpg" alt="" srcset="">
-                </div>
-                <div class="texto-prod">
-                    <h4>Some People Have Real Problems T-Shirt</h4>
-                    <p>Playera en tallas S/M/L. Semi Oficial. Varios Colores</p>
-                    <p class="precio">$300.00</p>
-                </div>
-                <a class="boton-base boton-azul" href=""> Ver en Tienda</a>
-            </div>
-            <div class="producto">
-                <div class="imagen-prod">
-                    <img src="img/harry-tienda-home.jpg" alt="" srcset="">
-                </div>
-                <div class="texto-prod">
-                    <h4>Fine Line Playera Negra</h4>
-                    <p>Playera en tallas S/M/L. Oficial. Limitada</p>
-                    <p class="precio">$650.00</p>
-                </div>
-                <a class="boton-base boton-azul" href=""> Ver en Tienda</a>
-            </div>
+        <?php 
+                    try {
+                        require_once ('includes/functions/db_connection-regular.php');
+                        $sql = " SELECT `idP`, `nameP`,`costP`,`imgP`,`descP`,`nameA` FROM `product`
+                        INNER JOIN artist
+                        ON artist.idA = product.ArtistidA
+                        LIMIT 3";
+                        $res = $connection->query($sql);
+                    } catch (\Exception $e) {
+                        echo $connection->error;
+                    }
+                    $products = $res->fetch_all();
+                    
+                    // echo var_dump($products);
+                    foreach ($products as $product) {
+                        echo '
+                            <div class="producto">
+                                <div class="imagen-prod">
+                                    <img src="img/tienda/'.$product[3].'" alt="" srcset="">
+                                </div>
+                                <div class="texto-prod">
+                                    <h4>'.$product[1].'</h4>
+                                    <p>'.$product[4].'</p>
+                                    <p class="precio">'.$product[2].'</p>
+                                </div>
+                                <a class="boton-base boton-azul" href="tienda/venta.php?producto='.$product[0].'"> Comprar</a>
+                            </div>
+                        ';
+                    }
+                ?>
         </div>
     </section>
 
