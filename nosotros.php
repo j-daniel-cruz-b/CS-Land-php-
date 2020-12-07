@@ -46,17 +46,19 @@
     </section>
 
     <section class="contenedor-mv seccion">
-        <img class="margin-0" src="img/logo-sin-texto.png" alt="">
-        <div class="contenedor m-v">
-            <div class="mision">
-                <h3 class="margin-0">Misión</h3>
-                <p>Plataforma dedicada al Stream de Conciertos Oficiales con artistas mundialmente reconocidos, así como sitio con Merche Oficial.</p>
-                <!--  -->
-            </div>
-            <div class="vision">
-                <h3 class="margin-0">Visión</h3>
-                <p class="centrar-texto">"Para 2022 ser reconocidos como la plataforma #1 de Stream de conciertos oficiales"</p>
-                <!-- <img src="img/nosotros-vision.png" alt=""> -->
+        <div class="mv-div">
+            <img class="margin-0" src="img/logo-sin-texto.png" alt="">
+            <div class="contenedor m-v">
+                <div class="mision">
+                    <h3 class="margin-0">Misión</h3>
+                    <p>Plataforma dedicada al Stream de Conciertos Oficiales con artistas mundialmente reconocidos, así como sitio con Merche Oficial.</p>
+                    <!--  -->
+                </div>
+                <div class="vision">
+                    <h3 class="margin-0">Visión</h3>
+                    <p class="centrar-texto">"Para 2022 ser reconocidos como la plataforma #1 de Stream de conciertos oficiales"</p>
+                    <!-- <img src="img/nosotros-vision.png" alt=""> -->
+                </div>
             </div>
         </div>
     </section>

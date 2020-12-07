@@ -62,59 +62,62 @@
         <!-- <main class="contenedor">
             <h1 class="centrar-texto">Lo MAS Comprado</h1>
             <div class="contenido-lo-mas-comprado">
+                <img src="./img/tienda-funda.jpg" alt="">
                 <div class="texto-t1">
                     <h3>1. Fundas de "Adele Live 2017"</h3>
                     <p>Desde $1,234.00</p>
                     <a class="boton-base boton-azul" href="./tienda/1.html">Comprar</a>
                 </div>
-                <img src="./img/tienda-funda.jpg" alt="">
             </div>
             <div class="vista-tienda">
-                <div class="producto-t">
+                <div class="producto">
                     <div class="imagen-prod">
                         <img src="img/tienda/lady-gaga-tienda-2.png" alt="" srcset="">
                     </div>
                     <div class="texto-prod">
                         <h4>Playera Large Chromatica 2020 Negra</h4>
-                        <p>Playera manga larga tallas S/M Oficial. Solo Color Negro</p>
+                        <p>Playera en tallas S/M/L. Oficial. Varios Colores</p>
                         <p class="precio">$700.00</p>
                     </div>
-                    <a class="boton-base boton-azul" href=""> Comprar</a>
+                    <a class="boton-base boton-azul" href="tienda.html"> Ver en Tienda</a>
                 </div>
-                <div class="producto-t">
+                <div class="producto">
                     <div class="imagen-prod">
                         <img src="img/tienda/lady-gaga-tienda-3.png" alt="" srcset="">
                     </div>
                     <div class="texto-prod">
                         <h4>Short Chromatica PINK</h4>
+                        <h4></h4>
                         <p>Short de licra tallas S/M/L/XL Oficial. Solo Color Rosa. Limitado</p>
                         <p class="precio">$964.00</p>
                     </div>
-                    <a class="boton-base boton-azul" href=""> Comprar</a>
+                    <a class="boton-base boton-azul" href="tienda.html"> Ver en Tienda</a>
                 </div>
-                <div class="producto-t">
+                <div class="producto">
                     <div class="imagen-prod">
                         <img src="img/tienda/dua-lipa-tienda-1.jpg" alt="" srcset="">
                     </div>
                     <div class="texto-prod">
                         <h4>Calcetas Yellow Nostalgic</h4>
-                        <p>Par de calcetines de vestir algodón Oficial
-                        </p>
+                        <h4></h4>
+                        <p>Par de calcetines de vestir algodón Oficial</p>
                         <p class="precio">$250.00</p>
                     </div>
-                    <a class="boton-base boton-azul" href=""> Comprar</a>
+                    <a class="boton-base boton-azul" href="tienda.html"> Ver en Tienda</a>
                 </div>
-                <div class="producto-t">
+                <div class="producto">
                     <div class="imagen-prod">
                         <img src="img/tienda/harry-tienda-2.jpg" alt="" srcset="">
                     </div>
                     <div class="texto-prod">
                         <h4>Fine Line Portada Playera</h4>
+                        <h4></h4>
                         <p>Playera tallas XS/S/M Oficial. Colores Azul/Negra/Gris</p>
                         <p class="precio">$650.00</p>
                     </div>
-                    <a class="boton-base boton-azul" href=""> Comprar</a>
+                    <a class="boton-base boton-azul" href="tienda.html"> Ver en Tienda</a>
                 </div>
+            </div>
         </main>
         <hr>
         <section class=" contenedor  seccion">
@@ -125,9 +128,8 @@
                     <div class="texto-desc">
                         <h5>Cartera Estilo "Fine Line"</h5>
                         <p>$648.00 Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid fugiat explicabo dolore reiciendis </p>
-
+                        <a class="boton-base boton-azul" href="">Comprar</a>
                     </div>
-                    <a class="boton-base boton-azul" href="">Comprar</a>
                 </div>
                 <div class="producto-d">
                     <div class="texto-desc">
