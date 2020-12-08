@@ -90,7 +90,7 @@
     <section class="seccion-blog seccion">
         <h2 class="contenedor centrar-texto texto-blanco">Descubre</h2>
         <div class="contenedor descubre">
-            <a href="blog.html">
+            <a href="blog.php">
                 <div class="entradas">
                     <div class="mini-entrda">
                         <div class="imagen">

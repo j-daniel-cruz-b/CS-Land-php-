@@ -1,0 +1,7 @@
+Credenciales para comprar en PAYPAL (TEST)
+Correo: jaime.cabots04@gmail.com
+Contraseña: verde1699
+
+Cuando se haga la compra lo va a redirigir a http://localhost/2020/Proyecto%20CS%20Land/tienda/pago_finalizado.php?exito=true&paymentId=PAYID-L7HIDUI62724501ME1217601&token=EC-0HM46731SD8585303&PayerID=F5DK4NNLLVMS2, 
+
+Tendrá que cambiar el "http://localhost/2020/Proyecto%20CS%20Land/" por "http://csland.petfooddepotmx.com/"
