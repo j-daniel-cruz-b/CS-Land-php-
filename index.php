@@ -22,6 +22,51 @@
         </div>
     </header>
 
+    <div class="slideshow">
+		<ul class="slider">
+			<li>
+				<img src="img/1.jpg" alt="">
+				<section class="caption">
+					<h1>Lorem ipsum 1</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci quis ipsa, id quidem quisquam unde.</p>
+				</section>
+			</li>
+			<li>
+				<img src="img/2.jpg" alt="">
+				<section class="caption">
+					<h1>Lorem ipsum 2</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci quis ipsa, id quidem quisquam unde.</p>
+				</section>
+			</li>
+			<li>
+				<img src="img/3.jpg" alt="">
+				<section class="caption">
+					<h1>Lorem ipsum 3</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci quis ipsa, id quidem quisquam unde.</p>
+				</section>
+			</li>
+			<li>
+				<img src="img/4.jpg" alt="">
+				<section class="caption">
+					<h1>Lorem ipsum 4</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci quis ipsa, id quidem quisquam unde.</p>
+				</section>
+			</li>
+		</ul>
+
+		<ol class="pagination">
+            
+		</ol>
+	
+		<div class="left">
+			<span class="fa fa-chevron-left"></span>
+		</div>
+
+		<div class="right">
+			<span class="fa fa-chevron-right"></span>
+		</div>
+	</div>
+
     <section class="contenedor contenido-centrado seccion">
         <h1 class="centrar-texto">Eventos del Mes</h1>
         <div class="eventos">

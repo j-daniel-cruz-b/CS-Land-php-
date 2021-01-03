@@ -9,9 +9,9 @@ class DB{
 
     public function __construct(){
         $this->host     = 'localhost';
-        $this->db       = 'u760520066_csland';
-        $this->user     = 'u760520066_cslandAdmin';
-        $this->password = "Apfelsekte1";
+        $this->db       = 'cslanddata';
+        $this->user     = 'superAdmin';
+        $this->password = "dLm40IX8fwIyiOCA";
         $this->charset  = 'utf8mb4';
     }
 
