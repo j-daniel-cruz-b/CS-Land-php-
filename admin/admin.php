@@ -1,19 +1,3 @@
-<?php 
-    // session_start();
-    // if (isset($_SESSION['user']) && $_SESSION['role'] != 5) {
-    //     echo '<script>
-    //     window.location="admin.php";
-    //     </script>';
-    // } else {        
-    //     echo '<script>
-    //     window.location="../index.php";
-    //     </script>';
-        // echo '<script>
-        // window.location="../index.php";
-        // </script>';
-    //     session_start();
-    // }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrador</title>
     <?php
-        include_once '../includes/templates/header.php';
-    ?>
+            include_once 'templates/headAdmin.php';
+        ?>
 </head>
 <body>
     <header>

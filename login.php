@@ -23,17 +23,15 @@ if(isset($_SESSION['user'])){
         $_SESSION['name'] = $user->getNombre();
         $_SESSION['usuarioID'] = $user->getId();
         $_SESSION['role'] = $user->getRole();
+        $_SESSION['isValid'] = true;
 
         include_once 'index.php';
     }else{
-        //echo "nombre de usuario y/o password incorrecto";
         $errorLogin = "Nombre de usuario y/o password es incorrecto";
         include_once './login/actionLogin.php';
     }
 
 }else{
-    //echo "Login";
-    // $errorLogin = "NO HAY SESIÓN";
     include_once 'login/actionLogin.php';
 
 }
