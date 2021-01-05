@@ -7,12 +7,12 @@
     <title>CS Land | Tienda</title>
     <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="icon" href="img/icono.png">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="../js/calcular.js"></script>
+    <script src="../lib/jsPDF-1.3.2/dist/jspdf.min.js"></script>
+    <script src="../js/pdfCotizacion.js"></script>
 </head>
 
 <body>
@@ -34,7 +34,7 @@
                 session_start();
 
                 if (isset($_SESSION['user'])) {
-                    echo '<p> ['.$_SESSION['name'].'] </p>';
+                    echo '<a> ['.$_SESSION['name'].'] </a>';
                     echo ' <a href="carrito.php">
                     Carrito
                     </a>';
@@ -44,7 +44,6 @@
                     </a>';
                 }
                 ?>
-               
                 </div>
             </div>
         </div>
@@ -52,21 +51,23 @@
 
     <section class="contenedor ">
         <h1>Mi Carrito</h1>
-        
-        <!-- <a class="boton-base boton-largo boton-azul" href="carrito.php?usser='.$_SESSION['usuarioID'].'&action=delete">Borrar Comprar</a> -->
+        <hr>
+        <h4 id="userID" style="display:none;"><?php echo $_SESSION['usuarioID'] ?></h4>
+        <h4 id="userName" style="display:none;"><?php echo $_SESSION['name'] ?></h4>
+        <h4 id="userEmail" style="display:none;"><?php echo $_SESSION['email'] ?></h5>
+        <h4 id="userPhone" style="display:none;"><?php echo $_SESSION['phone'] ?></h5>
     </section>
 
     <section class="contenedor ">
         <div class="vista-tienda ">
-
-        <div name="Read" class="container">
+        <div id="Read" class="container">
             <?php 
                 $idUss = $_SESSION['usuarioID'];
                 $r = rand ( 1 , 9999 );
                 // echo $r;
                 $columnas = 0;
                 $total = 0;
-                $sql = " SELECT `productoID`,`usuarioId`,`costoProduct`, `nameP`, `cantC` FROM `carrito` 
+                $sql = " SELECT `productoID`,`costoProduct`, `cantC`, `costoTotal`,`nameP` FROM `carrito` 
                 INNER JOIN product
                 ON carrito.productoID = product.idP
                 WHERE usuarioId = $idUss";
@@ -82,21 +83,17 @@
             ?>
             <pre>
             <?php
-                    // echo $sql;
-                    // $registrosHeader = $resAux->fetch_assoc();
                     $registros = $res->fetch_all();
-                    // $arrayPropiedades = array_keys($registrosHeader);
-                    // echo '<pre>'.var_dump($registros).'</pre>';
                 ?>
             </pre>
             <table class="table table-dark">
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">ID Producto</th>
-                        <th scope="col">ID Usuario</th>
                         <th scope="col">Prec/Unidad</th>
-                        <th scope="col">Nombre Producto</th>
                         <th scope="col">Unidades</th>
+                        <th scope="col">Prec/Total</th>
+                        <th scope="col">Nombre Producto</th>
                     </tr>
                     <?php
                         // foreach ($arrayPropiedades as $propiedad) {
@@ -120,31 +117,38 @@
                 </thead>
                 <tbody>
                     <?php
+                    $ren = 0;
+                    $celda = 0;
                             foreach($registros as $registro) {
-                                    echo '<tr>';
-                                    for ($i=0; $i < $columnas; $i++) { 
-                                        if ($i == 2) {
-                                            echo '<td>$ '.$registro[$i].'</td>';
-                                            $total += $registro[$i];
-                                        } else {
-                                        echo '<td>'.$registro[$i].'</td>';
-                                        }
+                                echo '<tr id="ren'.$ren.'">';
+                                for ($i=0; $i < $columnas; $i++) { 
+                                    if ($i == 3) {
+                                        echo '<td id="dato'.$celda.'">$ '.$registro[$i].'</td>';
+                                        $total += $registro[$i];
+                                        $celda++;
+                                    } else if ($i == 1){
+                                        echo '<td id="dato'.$celda.'">$ '.$registro[$i].'</td>';
+                                        $celda++;
+                                    } else {
+                                        echo '<td id="dato'.$celda.'">'.$registro[$i].'</td>';
+                                        $celda++;
                                     }
-                                    echo '<tr>';
-                                
+                                }
+                                echo '<tr>';
+                                $ren ++;
                             }
-                            // $connection->close();
                         ?>                    
                     <tr>
                         <td>
                         </td>
                         <td>
+                        </td>
+                        <td>
                             <h4>TOTAL</h4>
                         </td>
-                        <td>
+                        <td >
                             <h4><?php echo '$ '.$total ?></h4>
-                        </td>
-                        <td>
+                            <input value="<?php echo $total ?>" id="total" style="display: none">
                         </td>
                         <td>
                         </td>
@@ -152,15 +156,21 @@
                 </tbody>
                 </table>
             </table>
+            <div class="botones" id="buttons">
             <?php
             $id = $_SESSION['usuarioID'];
             if ($total == 0){
-                echo '<a class="boton-base boton-largo boton-rosa" href="carrito.php?usser='.$id.'&action=delete">Borrar Compra</a>' ;
+                echo '<a class="boton-base boton-largo boton-rosa" href="../tienda.php">Ir a Tienda</a>' ;
             } else {
+                echo '<p id="totRenglones" style="display:none;">'.$ren.'</p>';
                 echo '<a class="boton-base boton-rosa" href="pagarPaypal.php?usser='.$id.'&action=buy&total='.$total.'">Comprar</a>';
                 echo '<a class="boton-base boton-largo boton-rosa" href="carrito.php?usser='.$id.'&action=delete">Borrar Compra</a>' ;
+                echo '<button type="submit" class="boton-base boton-largo boton-azul" id="btnImprimir">Cotización de Compra</button>';
+                echo '<button type="submit" class="boton-base boton-largo boton-rosa" id="btnIVA">Mostrar I.V.A.</button>';
             }
         ?>
+            
+            </div>
         </div>
         
         <?php

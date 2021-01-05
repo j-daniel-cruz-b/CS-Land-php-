@@ -7,7 +7,6 @@
 
     echo '<script>
     window.location="../../index.php";
-    console.log("logout");
     </script>';
 
 ?>

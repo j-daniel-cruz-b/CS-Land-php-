@@ -11,16 +11,9 @@ $idProduct = $resultado['idProduct'];
 $cost = $resultado['costProduct'];    
 $units = $resultado['unidades'];
 $idUser = $_SESSION['usuarioID'];
-$subTotal = $cost * $units;
-// echo $subTotal;
-// $dateEvent = $resultado['dateEvent'];
-// $timeEvent = $resultado['timeEvent'];
-// $cost1Event = $resultado['cost1Event'];
-// $cost2Event = $resultado['cost2Event'];
-// $imgEvent = $resultado['imgEvent'];
-// $artist = $resultado['nArtist'];
-$sql = "INSERT INTO `carrito` (`productoID`, `usuarioId`, `costoProduct`, `cantC`) 
-VALUES ($idProduct, $idUser, $subTotal, $units)";
+$total = $cost * $units;
+$sql = "INSERT INTO `carrito` (`productoID`, `usuarioId`, `costoProduct`, `cantC`, `costoTotal`) 
+VALUES ($idProduct, $idUser, $cost, $units, $total)";
 try {
     require_once ('../includes/functions/db_connection-regular.php');
     $res = $connection->query($sql);

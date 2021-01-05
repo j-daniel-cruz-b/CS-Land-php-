@@ -23,6 +23,8 @@ if(isset($_SESSION['user'])){
         $_SESSION['name'] = $user->getNombre();
         $_SESSION['usuarioID'] = $user->getId();
         $_SESSION['role'] = $user->getRole();
+        $_SESSION['email'] = $_POST['email'];
+        $_SESSION['phone'] = $user->getPhone();
         $_SESSION['isValid'] = true;
 
         include_once 'index.php';
