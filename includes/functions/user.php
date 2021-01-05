@@ -8,6 +8,7 @@ class User extends DB{
     private $usuario;
     private $id;
     private $role;
+    private $phone;
 
     public function userExists($user, $pass){
         $md5pass = md5($pass);
@@ -31,6 +32,7 @@ class User extends DB{
             $this->usuario = $currentUser['nameU'];
             $this->id = $currentUser['idU'];
             $this->role = $currentUser['RoleidR'];
+            $this->phone = $currentUser['phoneU'];
         }
     }
 
@@ -44,6 +46,10 @@ class User extends DB{
 
     public function getRole(){
         return $this->role;
+    }
+
+    public function getPhone(){
+        return $this->phone;
     }
 }
 

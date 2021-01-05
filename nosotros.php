@@ -16,8 +16,8 @@
         <div class="contenido-header">
             <div class="navbar">
             <?php
-                        include_once 'includes/templates/navbar.php';
-                    ?>
+                include_once 'includes/templates/navbar.php';
+            ?>
             </div>
             <h1 class="texto-titulo">CONOCENOS</h1>
         </div>
@@ -28,7 +28,6 @@
         <div class="contenido-his">
             <div class="imagen-h">
                 <img src="img/nosotros.jpg" alt="Imagen sobre nosotros">
-                <!-- <img src="img/tv-azteca-nosotros.png" alt="Imagen sobre nosotros"> -->
             </div>
             <div class="texto-historia">
                 <blockquote>Fundación Oficial: 26 de Septiembre 2019.</blockquote>
@@ -38,11 +37,6 @@
                 </p>
             </div>
         </div>
-        <!-- <p> Luego de tomar consolidación 
-                e independencia creativa, la CEO Carolina Medina y el Director Creativo Daniel Cruz, 
-                decidieron cambiar el nombre a CS Land (Concert Stream Land), integrando Merche oficial de los artistas afiliados, 
-                asi como Meet & Greet y demás servicios.
-            </p> -->
     </section>
 
     <section class="contenedor-mv seccion">
@@ -52,12 +46,10 @@
                 <div class="mision">
                     <h3 class="margin-0">Misión</h3>
                     <p>Plataforma dedicada al Stream de Conciertos Oficiales con artistas mundialmente reconocidos, así como sitio con Merche Oficial.</p>
-                    <!--  -->
                 </div>
                 <div class="vision">
                     <h3 class="margin-0">Visión</h3>
                     <p class="centrar-texto">"Para 2022 ser reconocidos como la plataforma #1 de Stream de conciertos oficiales"</p>
-                    <!-- <img src="img/nosotros-vision.png" alt=""> -->
                 </div>
             </div>
         </div>

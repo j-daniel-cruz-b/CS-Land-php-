@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
     <?php
-        include_once '../../includes/templates/header.php';
-    ?>
+            include_once '../templates/headPreAdmin.php';
+        ?>
 </head>
 <body>
     <header>

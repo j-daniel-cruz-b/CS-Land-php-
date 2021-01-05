@@ -58,7 +58,7 @@
 
             if($resultado == "true"){
                 echo '<div class="ml-5">';
-                echo "<h4>El usuario se regustro CORRECTAMENTE<h4>";
+                echo "<h4>El usuario se registro CORRECTAMENTE<h4>";
                 echo "<h3>Usuario {$usuarioNuevo}</h3>";
                 echo '</div>'.
                 '<a class="boton-base boton-rosa mb-5" href="../login.php">Iniciar Sesión</a>';

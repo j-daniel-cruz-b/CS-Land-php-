@@ -188,8 +188,8 @@ footer {
 }
 
 .site-header.stream {
-    background-image: url(../img/background-main\ 6.jpg);
-    height: 50vh;
+    /* background-image: url(../img/background-main\ 6.jpg); */
+    min-height: 0;
 }
 
 .site-header.tienda {
@@ -372,15 +372,6 @@ footer {
     margin-top: 3rem;
 }
 
-
-/* .descubre {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 3rem;
-    margin-top: 3rem;
-    /* margin-bottom: 2rem; 
-} */
-
 .descubre a {
     color: white;
     text-decoration: none;
@@ -561,8 +552,22 @@ footer {
     background-color: #63a9d4;
 }
 
+.boton-slider {
+    margin-top: 35rem;
+    margin-bottom: 1rem;
+}
+
 .boton-largo {
     width: 200px;
+}
+
+.botones {
+    display: flex;
+    align-items: center;
+}
+
+.botones h4 {
+    padding-left: 1rem;
 }
 
 

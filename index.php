@@ -22,7 +22,11 @@
         </div>
     </header>
 
+    
+
     <section class="contenedor contenido-centrado seccion">
+        <br>
+        <br>
         <h1 class="centrar-texto">Eventos del Mes</h1>
         <div class="eventos">
         <?php 
@@ -159,7 +163,6 @@
                 ?>
         </div>
     </section>
-
     <?php
     include_once 'includes/templates/footer.php';
     ?>

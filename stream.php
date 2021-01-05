@@ -11,44 +11,65 @@
         include_once 'includes/templates/header.php';
     ?>
     </head>
-
     <body>
-        <header class="site-header stream">
+        <header class="stream-header">
             <div class="contenido-header">
                 <div class="navbar">
                 <?php
                     include_once 'includes/templates/navbar.php';
                 ?>
                 </div>
-                <h1 class="texto-titulo">STREAM</h1>
-            </div>
+                </div>
+                <div class="slideshow">
+                    <ul class="slider">
+                        <li>
+                            <img src="img/background-main 6.jpg" alt="">
+                            <section class="caption">
+                                <h1>Eventos Estelares</h1>
+                                <p>Los últimos eventos más esperados por la audiencia.</p>
+                            </section>
+                        </li>
+                        <li>
+                            <img src="img/bts-evento-estelar.jpg" alt="">
+                            <section class="caption">
+                                <a class="boton-base boton-azul boton-slider" href="./eventos/1.html">Ir a Evento</a>
+                            </section>
+                        </li>
+                        <li>
+                            <img src="img/adele-evento-estelar.jpg" alt="">
+                            <section class="caption">
+                                <a class="boton-base boton-azul boton-slider" href="./eventos/1.html">Ir a Evento</a>
+                            </section>
+                        </li>
+                        <li>
+                            <img src="img/billie-concert-estelar.jpg" alt="">
+                            <section class="caption">
+                                <a class="boton-base boton-azul boton-slider" href="./eventos/1.html">Ir a Evento</a>
+                            </section>
+                        </li>
+                    </ul>
+
+                    <ol class="pagination">
+
+                    </ol>
+
+                    <div class="left">
+                        <span class="fa fa-chevron-left"></span>
+                    </div>
+
+                    <div class="right">
+                        <span class="fa fa-chevron-right"></span>
+                    </div>
+                </div>
+                <!-- <h1 class="texto-titulo">STREAM</h1> -->
+            
         </header>
-        <section class=" seccion">
-            <h2 class="centrar-texto">Eventos Estelares</h2>
-
-            <div class="evento-e1">
-                <div class="contenido-eventoE" style="background-image: url(img/bts-evento-estelar.jpg);">
-                    <p>BTS MAP OF THE SOUL ON:E</p>
-                    <a class="boton-base boton-azul mb-5" href="./eventos/1.html">Ir a Evento</a>
-                </div>
-            </div>
-            <div class="evento-e2">
-                <div class="contenido-eventoE" style="background-image: url(img/adele-evento-estelar.jpg);">
-                    <p>ADELE LIVE IN NEW YORK CITY 2020</p>
-                    <a class="boton-base boton-azul mb-5" href="./eventos/2.html">Ir a Evento</a>
-                </div>
-            </div>
-            <div class="evento-e3">
-                <div class="contenido-eventoE" style="background-image: url(img/billie-concert-estelar.jpg);">
-                    <p>Billie Eilish When We All Fall Asleep Tour</p>
-                    <a class="boton-base boton-azul mb-5" href="./eventos/3.html">Ir a Evento</a>
-                </div>
-            </div>
-        </section>
-
-        <hr class="contenedor">
-
+        
         <section class="contenedor contenido-centrado seccion">
+            <br>
+            <hr class="contenedor">
+            <br>
+            <br>
             <h3 class="centrar-texto">Próximos Eventos</h3>
 
             <?php 
@@ -93,9 +114,9 @@
                         // setlocale(LC_TIME, 'es_ES.UTF-8');
                         setlocale(LC_TIME, 'spanish');
                         ?>
-                        <i class="fab fa-github-square">
+                        <span class="fa fa-calendar">
                         <?php echo strftime( "%A, %e de %B del %Y", strtotime($dia) );?>  
-                </h3></i>
+                </h3></span>
                 <?php 
                     foreach ($lista_eventos as $event) { ?>
                         <div class="evento">
