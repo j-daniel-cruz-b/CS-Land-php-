@@ -1,9 +1,9 @@
 <?php 
 
     $host     = 'localhost';
-    $db       = 'cslanddata';
-    $user     = 'superAdmin';
-    $password = "dLm40IX8fwIyiOCA";
+    $db       = 'u760520066_csland';
+    $user     = 'u760520066_csAdmin';
+    $password = "apfelsekte";
 
     $connection = new mysqli($host,$user,$password,$db);
     
