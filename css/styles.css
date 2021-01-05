@@ -552,6 +552,11 @@ footer {
     background-color: #63a9d4;
 }
 
+.boton-slider {
+    margin-top: 35rem;
+    margin-bottom: 1rem;
+}
+
 .boton-largo {
     width: 200px;
 }

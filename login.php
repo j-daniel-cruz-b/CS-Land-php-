@@ -10,7 +10,7 @@ if(isset($_SESSION['user'])){
     $user->setUser($userSession->getCurrentUser());
     $_SESSION["name"] = $user->getNombre();
     $_SESSION['role'] = $user->getRole();
-    include_once 'index.php';
+    include_once './login/resultadoLogin.php';
 
 }else if(isset($_POST['email']) && isset($_POST['contraseña'])){
     $userForm = $_POST['email'];
@@ -27,7 +27,7 @@ if(isset($_SESSION['user'])){
         $_SESSION['phone'] = $user->getPhone();
         $_SESSION['isValid'] = true;
 
-        include_once 'index.php';
+        include_once './login/resultadoLogin.php';
     }else{
         $errorLogin = "Nombre de usuario y/o password es incorrecto";
         include_once './login/actionLogin.php';

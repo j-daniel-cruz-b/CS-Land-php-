@@ -250,24 +250,24 @@
             <div class="margin-0 ">
                 <h4 class="margin-0 ">Menú:</h4>
                 <lo class="navegacion-footer ">
-                    <li><a href="../login.html ">
+                    <li><a href="../login.php ">
                         Inicio de Sesión / Registro
                     </a></li>
-                    <li><a href="../nosotros.html ">
+                    <li><a href="../nosotros.php ">
                         Nosotros
                     </a></li>
                     <li>
-                        <a href="../stream.html ">
+                        <a href="../stream.php ">
                             Stream
                         </a>
                     </li>
-                    <li><a href="../tienda.html ">
+                    <li><a href="../tienda.php ">
                         Tienda
                     </a></li>
-                    <li><a href="../contacto.html ">
+                    <li><a href="../contacto.php ">
                         Contacto
                     </a></li>
-                    <li><a href="../blog.html ">
+                    <li><a href="../blog.php ">
                         Blog
                     </a></li>
                 </lo>

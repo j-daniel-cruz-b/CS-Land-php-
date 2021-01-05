@@ -32,20 +32,19 @@
                         <li>
                             <img src="img/bts-evento-estelar.jpg" alt="">
                             <section class="caption">
-                                <a class="boton-base boton-azul mb-5" href="./eventos/1.html">Ir a Evento</a>
+                                <a class="boton-base boton-azul boton-slider" href="./eventos/1.html">Ir a Evento</a>
                             </section>
                         </li>
                         <li>
                             <img src="img/adele-evento-estelar.jpg" alt="">
                             <section class="caption">
-                                <a class="boton-base boton-azul mb-5" href="./eventos/1.html">Ir a Evento</a>
+                                <a class="boton-base boton-azul boton-slider" href="./eventos/1.html">Ir a Evento</a>
                             </section>
                         </li>
                         <li>
                             <img src="img/billie-concert-estelar.jpg" alt="">
                             <section class="caption">
-                                <br>
-                                <a class="boton-base boton-azul mb-5" href="./eventos/1.html">Ir a Evento</a>
+                                <a class="boton-base boton-azul boton-slider" href="./eventos/1.html">Ir a Evento</a>
                             </section>
                         </li>
                     </ul>
