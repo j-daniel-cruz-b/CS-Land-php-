@@ -155,10 +155,11 @@
                                     <h4>'.$product[1].'</h4>
                                     <p>'.$product[4].'</p>
                                     <p class="precio">'.$product[2].'</p>
-                                </div>
-                                <a class="boton-base boton-azul" href="tienda/venta.php?producto='.$product[0].'"> Comprar</a>
-                            </div>
-                        ';
+                                </div>';
+                                if (isset($_SESSION['user'])) {
+                                echo '<a class="boton-base boton-azul" href="tienda/venta.php?producto='.$product[0].'"> Comprar</a>';
+                                }
+                        echo '</div>';
                     }
                 ?>
         </div>

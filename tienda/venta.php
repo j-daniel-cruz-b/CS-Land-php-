@@ -70,7 +70,7 @@
         // foreach ($products as $product) { ?>
         <div class="evento">
         <?php
-        echo '<img class="imagen ml-5" src="../img/tienda/'.$product['imgP'].'" alt="" srcset="">'.
+        echo '<img class="imagen" src="../img/tienda/'.$product['imgP'].'" alt="" srcset="">'.
         '<div class="texto-evento">'.
         
         '<input type="text" name="nameProduct" rows="1" colums="15" value="'.$product['nameP'].'" readonly></input>'.
@@ -131,14 +131,14 @@
             <div class="col ">
                 <img src="../img/logo-footer.png " alt=" " srcset=" ">
             </div>
-            <h5 class="margin-0 "></h5>
+            <h5 class="margin-0 line"></h5>
             <div>
                 <h4 class="margin-0 ">CONTACTO</h4>
                 <p class="margin-0 "><span>Correo:</span> &ThinSpace; cs-land.enterprise@gmail.com</p>
                 <p class="margin-0 "><span>Teléfono:</span> &ThinSpace; 52(84)200-87-70></p>
                 <P class="margin-0 "><span>Direccion:</span> &ThinSpace; Montes Pirineos 947Independencia Oriente, <br> 44340 Guadalajara, Jal.></P>
             </div>
-            <h5 class="margin-0 "></h5>
+            <h5 class="margin-0 line"></h5>
             <div class="margin-0 ">
                 <h4 class="margin-0 ">Menú:</h4>
                 <lo class="navegacion-footer ">

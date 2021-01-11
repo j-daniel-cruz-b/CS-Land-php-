@@ -163,16 +163,14 @@
                 echo '<a class="boton-base boton-largo boton-rosa" href="../tienda.php">Ir a Tienda</a>' ;
             } else {
                 echo '<p id="totRenglones" style="display:none;">'.$ren.'</p>';
-                echo '<a class="boton-base boton-rosa" href="pagarPaypal.php?usser='.$id.'&action=buy&total='.$total.'">Comprar</a>';
-                echo '<a class="boton-base boton-largo boton-rosa" href="carrito.php?usser='.$id.'&action=delete">Borrar Compra</a>' ;
-                echo '<button type="submit" class="boton-base boton-largo boton-azul" id="btnImprimir">Cotización de Compra</button>';
-                echo '<button type="submit" class="boton-base boton-largo boton-rosa" id="btnIVA">Mostrar I.V.A.</button>';
+                echo '<a class="boton-base boton-azul line" href="pagarPaypal.php?usser='.$id.'&action=buy&total='.$total.'">Comprar</a>';
+                echo '<a class="boton-base boton-largo boton-rosa line" href="carrito.php?usser='.$id.'&action=delete">Borrar Compra</a>' ;
+                echo '<button type="submit" class="boton-base boton-largo boton-azul line" id="btnImprimir">Cotización de Compra</button>';
+                echo '<button type="submit" class="boton-base boton-largo boton-rosa line" id="btnIVA">Mostrar I.V.A.</button>';
             }
         ?>
-            
             </div>
-        </div>
-        
+        </div>        
         <?php
         if (isset($_GET['action'])) {
             $action = $_GET['action'];
@@ -200,38 +198,11 @@
                     break;
             }
         }
-            
-            // <?php 
-            // try {
-            //     require_once ('../includes/functions/db_connection-regular.php');
-            //     $sql = $sql = " SELECT `idP`, `nameP`,`costP`,`imgP`,`descP`,`nameA` FROM `product`
-            //     INNER JOIN artist
-            //     ON artist.idA = product.ArtistidA
-            //     LIMIT 4";
-            //     $res = $connection->query($sql);
-            // } catch (\Exception $e) {
-            //     echo $connection->error;
-            // }
-            // $products = $res->fetch_all();
-            
-            // // echo var_dump($products);
-            // foreach ($products as $product) {
-            //     echo '
-            //     <div class="producto-t">
-            //         <div class="imagen-prod">
-            //             <img src="img/'.$product[3].'" alt="" srcset="">
-            //         </div>
-            //         <div class="texto-prod">
-            //             <h4>'.$product[1].'</h4>
-            //             <p>'.$product[4].'</p>
-            //             <p class="precio">'.$product[2].'</p>
-            //         </div>
-            //         <a class="boton-base boton-azul" href="venta.php?producto='.$product[0].'"> Comprar</a>
-            //     </div>
-            // ';
-            // }
             ?>
         </div>
+        <br>
+        <br>
+        <br>
     </section>
 
     <footer>
@@ -239,14 +210,14 @@
             <div class="col ">
                 <img src="../img/logo-footer.png " alt=" " srcset=" ">
             </div>
-            <h5 class="margin-0 "></h5>
+            <h5 class="margin-0 line"></h5>
             <div>
                 <h4 class="margin-0 ">CONTACTO</h4>
                 <p class="margin-0 "><span>Correo:</span> &ThinSpace; cs-land.enterprise@gmail.com</p>
                 <p class="margin-0 "><span>Teléfono:</span> &ThinSpace; 52(84)200-87-70></p>
                 <P class="margin-0 "><span>Direccion:</span> &ThinSpace; Montes Pirineos 947Independencia Oriente, <br> 44340 Guadalajara, Jal.></P>
             </div>
-            <h5 class="margin-0 "></h5>
+            <h5 class="margin-0 line"></h5>
             <div class="margin-0 ">
                 <h4 class="margin-0 ">Menú:</h4>
                 <lo class="navegacion-footer ">

@@ -87,6 +87,10 @@ img {
     margin-bottom: 0;
 }
 
+.line {
+    margin-right: 1.5rem;
+}
+
 .centrar-texto {
     text-align: center;
 }
@@ -97,7 +101,7 @@ img {
 
 .imagen {
     border-radius: 0 0 0 4rem;
-    margin: auto;
+    margin: 0;
 }
 
 .texto-blanco {
@@ -482,15 +486,12 @@ footer {
 }
 
 .producto {
-    /* flex: 0 0 calc(33.3% - 1rem); */
-    /**flex-shrink: 0;
-    flex-basis: calc(33.3% - 1rem);**/
     border: 3px solid #B5B5B5;
     background-color: #D693BE;
     margin-top: 2rem;
     margin-bottom: 2rem;
     align-items: center;
-    max-width: 40rem;
+    width: 39rem;
 }
 
 .texto-prod h4 {

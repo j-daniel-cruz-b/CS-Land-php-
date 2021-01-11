@@ -18,7 +18,7 @@ class User extends DB{
 
         if($query->rowCount()){
             return true;
-        }else{
+        } else {
             return false;
         }
     }

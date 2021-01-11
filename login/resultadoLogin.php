@@ -15,8 +15,8 @@
 </head>
 
 <body>
-<header class="site-header">
-        <div class="contenido-header">
+<header class="">
+        <div class="">
             <div class="navbar">
             <a class="icono contenedor" href="./index.php">
                 <img src="./img/icono.png" alt="Logotipo de CS Land">
@@ -57,13 +57,13 @@
         <h2>Inicio de Sesión</h2>
         <div class="evento">
         <?php 
-            // $resultado = $_GET['exito'];
-            // $usuarioNuevo = $_GET['usuario'];
                 echo '<div class="ml-5">';
                 echo "<h4>Se ha inicacio sesión CORRECTAMENTE<h4>";
                 echo '<h3>Con el Usuario ['.$_SESSION['usuarioID'].' - '.$_SESSION['name'].']</h3>';
                 echo '</div>';
             
         ?>    
-</body>
+        </div>
+    </seccion>
+    </body>
 </html>
