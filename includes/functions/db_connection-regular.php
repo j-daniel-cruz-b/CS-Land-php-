@@ -3,7 +3,7 @@
     $host     = 'localhost';
     $db       = 'u760520066_csland';
     $user     = 'u760520066_csAdmin';
-    $password = "apfelsekte";
+    $password = 'Apfelsekte1';
 
     $connection = new mysqli($host,$user,$password,$db);
     

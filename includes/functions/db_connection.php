@@ -11,7 +11,7 @@ class DB{
         $this->host     = 'localhost';
         $this->db       = 'u760520066_csland';
         $this->user     = 'u760520066_csAdmin';
-        $this->password = "apfelsekte";
+        $this->password = 'Apfelsekte1';
     }
 
     function connect(){
