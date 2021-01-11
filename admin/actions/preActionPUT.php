@@ -35,7 +35,7 @@
                 <?php
                 break;
             case 'producto':
-                $sql = " SELECT idP, nameP,ArtistidA, descP, nameA, costP, imgP FROM `product`
+                $sql = " SELECT idP, nameP,ArtistidA, descP, nameA, costP, imgP, stok FROM `product`
                 INNER JOIN artist
                 ON artist.idA = product.ArtistidA
                 WHERE idP = ".$resultado['producto'].
@@ -43,11 +43,11 @@
                 break;
             case 'usuario':
                 $sql = " SELECT `idU`,`nameU`,`firstnameU`,`passU`,`lastnameU`,`emailU`,`phoneU`,`RoleidR`, nameR
-                 FROM `user` 
-                 INNER JOIN role 
-                 ON user.RoleidR = role.idR 
-                 WHERE idU = ".$resultado['usuario']."
-                 ORDER BY idU";
+                FROM `user` 
+                INNER JOIN role 
+                ON user.RoleidR = role.idR 
+                WHERE idU = ".$resultado['usuario']."
+                ORDER BY idU";
                 break;
             default:
                 # code...
@@ -72,7 +72,6 @@
                         <div class="form-group col-md-2">
                             <?php echo '<input type="text" class="form-control" value="'.$seleccion['idE'].'" name="idEvent" readonly>';?>
                             <?php echo '<input type="text" class="form-control" value="'.$seleccion['idA'].'" name="oldArtist" readonly>';?>
-                            <?php //echo '<input type="text" class="form-control" value="'.$seleccion['nameE'].'" readonly>';?>
                         </div>
                     </div>
                     <div class="form-row">
@@ -120,8 +119,6 @@
                                             echo $connection->error;
                                         }
                                         $ids = $res->fetch_all();
-                                        // $ids = $seleccionArtistas;
-                                        // echo var_dump($ids);
                                         foreach($ids as $id) {
                                             echo '<option value="'.$id[0].'">'.$id[0].' - '.$id[1].'</option>';
                                         }
@@ -136,7 +133,6 @@
                         <div class="form-group">
                             <label for="imgEvent">Imagen del Evento (Exibición [237x237px]), <br> Se escribirá en la carpeta img del proyecto</label>
                             <?php echo '<input type="text" class="form-control-file" name="imgEvent" value="'.$seleccion['imgE'].'">';?>
-                            <!-- <input type="file" class="form-control-file" name="imgEvent"> -->
                         </div>
                         </div>
                     </div>
@@ -203,8 +199,8 @@
                         <div class="form-row">
                             <div class="form-group col-md-5">
                                 <div class="form-group">
-                                    <label for="imgEvent">Imagen del Producto (Exibición [237x237px]), <br> Se escribirá en la carpeta img del proyecto</label>
-                                    <?php echo '<input type="text" class="form-control-file" name="imgEvent" value="'.$seleccion['imgP'].'">';?>
+                                    <label for="stokProducto">Stok Disponible</label>
+                                    <?php echo '<input type="number" class="form-control" name="stokProducto" value="'.$seleccion['stok'].'">';?>
                                 </div>
                             </div>
                             
@@ -295,7 +291,6 @@
                         <button type="submit" class="btn btn-primary">Actualizar Usuario</button>
                     </form>
                 </div>
-
                 <?php
                 break;
         
@@ -304,9 +299,6 @@
                 break;
         }    
     ?>
-    
-    
-    
     </div>
 </body>
 </html>

@@ -42,18 +42,16 @@
                 VALUES($artist,(SELECT idE FROM `evento` WHERE nameE = '$nameEvent'),127)";
                 break;
             case 'Producto':
-                // echo var_dump($resultado);
                 $nameProduct = $resultado['nameProduct'];    
                 $title = $resultado['nameProduct'];    
                 $descProduct = $resultado['descProduct'];
                 $costProduct = $resultado['costProduct'];
-                $imgProduct = $resultado['imgProduct'];
                 $artist = $resultado['Artist'];
-                $sql = "INSERT INTO product(nameP, costP, ArtistidA, imgP, descP)
-                VALUES('$nameProduct',$costProduct,$artist,'$imgProduct','$descProduct');";
+                $stok = $resultado['stokProducto'];
+                $sql = "INSERT INTO product(nameP, costP, ArtistidA, imgP, descP, stok)
+                VALUES('$nameProduct',$costProduct,$artist,'','$descProduct',$stok);";
                 break;
             case 'Usuario':
-                // echo var_dump($resultado);
                 $fNameUser = $resultado['firstnameUser'];    
                 $title = $resultado['firstnameUser'].' '.$resultado['lastnameUser'];    
                 $lnameUser = $resultado['lastnameUser'];
@@ -66,7 +64,6 @@
                 VALUES('$nameUser','$passUser','$fNameUser','$lnameUser','$emailUser','$phoneUser',$roleUser);";
                 break;
             case 'Cliente':
-                // echo var_dump($resultado);
                 $fNameUser = $resultado['firstnameUser'];    
                 $usuarioNuevo = $resultado['firstnameUser'].' '.$resultado['lastnameUser'];    
                 $lnameUser = $resultado['lastnameUser'];

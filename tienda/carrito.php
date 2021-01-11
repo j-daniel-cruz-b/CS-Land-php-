@@ -34,10 +34,10 @@
                 session_start();
 
                 if (isset($_SESSION['user'])) {
-                    echo '<a> ['.$_SESSION['name'].'] </a>';
                     echo ' <a href="carrito.php">
                     Carrito
                     </a>';
+                    echo '<a href="#"> ['.$_SESSION['name'].'] </a>';
                 } else {
                     echo ' <a href="../login.php">
                     <img src="../img/login.png" alt="login">

@@ -44,18 +44,17 @@
                 AND `eventassignament`.`EventidE` = $idEvento AND `eventassignament`.`folio` = 127;";
                 break;
             case 'Producto':
-                // echo var_dump($resultado);
                 $idProduct = $resultado['idProduct']; 
                 $nameProduct = $resultado['nameProduct'];    
                 $title = $resultado['nameProduct'];    
                 $descProduct = $resultado['descProduct'];
                 $costProduct = $resultado['costProduct'];
-                $imgProduct = $resultado['imgProduct'];
                 $artist = $resultado['Artist'];
                 $oldArtist = $resultado['oldArtist'];
+                $stok = $resultado['stokProducto'];
                 $sql = "UPDATE `product` SET `nameP` = '$nameProduct', `costP` = $costProduct, `ArtistidA` = $artist, 
-                `imgP` = '$imgProduct', `descP` = '$descProduct' 
-                WHERE `product`.`idP` = $idProduct;";
+                `imgP` = '', `descP` = '$descProduct', `stok` = $stok
+                WHERE `product`.`idP` = $idProduct";
                 break;
             case 'Usuario':
                 // echo var_dump($resultado);
@@ -104,8 +103,7 @@
             <p class="mb-0">Si desea intentar de nuevo <a role="button" class="btn btn-info" href="../results.php?entity='.strtolower($entity).'&action=put">Presione Aquí</a></p>
             </div>';
             echo '</div>';
-        }
-        
+        }        
     ?>
 
 </body>

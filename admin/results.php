@@ -167,13 +167,9 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="form-row">
-                                            <div class="form-group col-md-5">
-                                                <div class="form-group">
-                                                    <label for="imgEvent">Imagen del Evento (Exibición [237x237px]), <br> Se escribirá en la carpeta img del proyecto</label>
-                                                    <input type="text" class="form-control-file" name="imgEvent">
-                                                </div>
-                                            </div>
+                                        <div class="mb-5">
+                                            <label for="formFile" class="form-label">Default file input example</label>
+                                            <input class="form-control" type="file" class="formFile">
                                         </div>
                                         <button type="submit" class="btn btn-primary">Registrar Evento</button>
                                     </form>
@@ -277,32 +273,10 @@
                                     <?php 
                                         $sql = '';
                                         $columnas = 0;
-                                        switch ($entidad) {
-                                            case 'evento':
-                                                $sql = " SELECT idE, nameE, nameA, descE, dateE, timeE, cost1, cost2
-                                                FROM `eventassignament`
-                                                INNER JOIN evento
-                                                ON eventassignament.EventidE = evento.idE
-                                                INNER JOIN artist
-                                                ON eventassignament.ArtistidA = artist.idA 
-                                                ORDER BY dateE";
-                                                $columnas = 8;
-                                                break;
-                                            case 'producto':
-                                                $sql = "SELECT idP, nameP, descP, costP, ArtistidA
-                                                FROM `product`
-                                                ORDER BY idP";
-                                                $columnas = 5;
-                                                break; 
-                                            case 'usuario':
-                                                $sql = "SELECT * FROM `user`";
-                                                $columnas = 8;
-                                                break;           
-                                            default:
-                                                # code...
-                                                break;
-                                        }
-                                    
+                                        $sql = "SELECT idP, nameP, descP, costP, ArtistidA, stok
+                                        FROM `product`
+                                        ORDER BY idP";
+                                        $columnas = 6;
                                         try {
                                             require_once ('../includes/functions/db_connection-regular.php');
                                             $res = $connection->query($sql);
@@ -343,17 +317,15 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php
-                                                $conciertos = array();           
-        
-                                                    foreach($registros as $registro) {
-                                                            echo '<tr>';
-                                                            for ($i=0; $i < $columnas; $i++) { 
-                                                                echo '<td>'.$registro[$i].'</td>';
-                                                            }
-                                                            echo '<tr>';
-                                                        
-                                                    }
+                                            <?php            
+                                                foreach($registros as $registro) {
+                                                        echo '<tr>';
+                                                        for ($i=0; $i < $columnas; $i++) { 
+                                                            echo '<td>'.$registro[$i].'</td>';
+                                                        }
+                                                        echo '<tr>';
+                                                    
+                                                }
                                                     $connection->close();
                                                 ?>                    
                                             
@@ -417,10 +389,8 @@
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-5">
-                                                <div class="form-group">
-                                                    <label for="imgEvent">Imagen del Producto (Exibición [237x237px]), <br> Se escribirá en la carpeta img del proyecto</label>
-                                                    <input type="text" class="form-control-file" name="imgEvent">
-                                                </div>
+                                                <label for="stokProducto">Stock</label>
+                                                <input type="number" class="form-control" name="stokProducto">
                                             </div>
                                         </div>
                                         <button type="submit" class="btn btn-primary">Registrar Producto</button>
@@ -430,7 +400,6 @@
                                 break;
                             case 'put':
                                 echo '<h4>ACTUALIZA LOS REGISTROS</h4>'; ?>
-
                                 <div name="Update" class="container">
                                     <form method="get">
                                         <div class="form-row">
@@ -457,16 +426,13 @@
                                                     ?>
                                                 </div>
                                                 </div>
-                                            </div>
-                                            
+                                            </div>                                            
                                     </form>
-                                </div>
-                                
+                                </div>                                
                                 <?php
                                 break;
                             case 'delete':
                                 echo 'REALIZA UN NUEVO REGISTRO'; ?>
-
                                 <div name="Update" class="container">
                                     <form method="get">
                                         <div class="form-row">
@@ -731,9 +697,5 @@
             ?>
         </h5>
     </div>
-    
-    
-    
-
 </body>
 </html>

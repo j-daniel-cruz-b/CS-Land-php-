@@ -21,23 +21,14 @@
 <header class="site-header">
         <div class="contenido-header">
             <div class="navbar">
-            <a class="icono contenedor" href="../index.php">
+            <a class="icono contenedor" href="../includes/functions/deleteCarrito.php">
                 <img src="../img/icono.png" alt="Logotipo de CS Land">
                 </a>
                 <div class="navegacion">
-                <!-- <nav>
-                    <a href="nosotros.php">Nosotros</a>
-                    <a href="stream.php">Stream</a>
-                    <a href="tienda.php">Tienda</a>
-                    <a href="contacto.php">Contacto</a>
-                </nav> -->
                 <?php 
                 session_start();
                 if (isset($_SESSION['user'])) {
                     echo '<a href="#"> ['.$_SESSION['usuarioID'].' '.$_SESSION['name'].'] </a>';
-                    // echo ' <a href="carrito.php">
-                    // Carrito
-                    // </a>';
                 } else {
                     echo ' <a href="../login.php">
                     <img src="../img/login.png" alt="login">
@@ -62,7 +53,6 @@
                 echo '<h3 id="idpayment">'.$paymentId.'</h3>';
                 echo '</div>'.
                 '<a class="boton-base boton-largo boton-rosa mb-5" href="../includes/functions/deleteCarrito.php">Terminar Compra</a>';
-                // '<input type="button" class="boton-azul" id="Imprimir" value="Imprimir Recibo">';
                 $sql = ' SELECT `productoID`,`costoProduct`, `cantC`, `costoTotal`,`nameP` FROM `carrito` 
                 INNER JOIN product
                 ON carrito.productoID = product.idP
@@ -100,9 +90,8 @@
                 $sql = " SELECT `productoID`,`costoProduct`, `cantC`, `costoTotal`,`nameP` FROM `carrito` 
                 INNER JOIN product
                 ON carrito.productoID = product.idP
-                WHERE usuarioId = $idUss";
+                WHERE usuarioId = $idUss ";
                 $columnas = 5;
-            
                 try {
                     require_once ('../includes/functions/db_connection-regular.php');
                     $res = $connection->query($sql);
@@ -146,7 +135,21 @@
                                 }
                                 echo '<tr>';
                                 $ren ++;
+                                $sqlCompra = "INSERT INTO purchase(ProductidP, UseridU, tipoPago, cantP, total)
+                                VALUES('$registro[0]',$idUss,'PAYPAL','$registro[2]',$registro[3]);";
+                                $sqlResta = "UPDATE `product` 
+                                SET `stok` = 100 - $registro[2]
+                                WHERE `idP` = $registro[0]";
+                                try {
+                                    require_once ('../includes/functions/db_connection-regular.php');
+                                    $res = $connection->query($sqlResta);
+                                    $res = $connection->query($sqlCompra);
+                                } catch (\Exception $e) {
+                                    echo $e->getMessage();
+                                }
+                                
                             }
+
                         ?>                    
                     <tr>
                         <td>

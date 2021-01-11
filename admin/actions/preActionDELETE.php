@@ -19,7 +19,6 @@
         $resultado = $_GET;
         $entity = $resultado['entity'];
         $sql = "";
-        // $sqlA = "SELECT * FROM `artist` ORDER BY `artist`.`idA` ASC";
         switch ($entity) {
             case 'evento':
                 $sql = " SELECT idE, idA,nameE, nameA, descE, dateE, timeE, cost1, cost2, imgE
@@ -30,12 +29,9 @@
                 ON eventassignament.ArtistidA = artist.idA
                 WHERE idE = ".$resultado['evento'].
                 " ORDER BY dateE";
-                // $seleccion = consultarSQL($sql); 
-                //  ?>
-                <?php
                 break;
             case 'producto':
-                $sql = " SELECT idP, nameP,ArtistidA, descP, nameA, costP, imgP FROM `product`
+                $sql = " SELECT idP, nameP,ArtistidA, descP, nameA, costP, imgP, stok FROM `product`
                 INNER JOIN artist
                 ON artist.idA = product.ArtistidA
                 WHERE idP = ".$resultado['producto'].
@@ -60,10 +56,8 @@
             echo $connection->error;
         }
         $seleccion = $res->fetch_assoc();
-        // var_dump($seleccion);
         switch ($entity) {
-            case 'evento': ?>
-                
+            case 'evento': ?>                
                 <form class="mt-4" name="Update" action="actionDELETE.php" method="post">
                     <div class="form-row">
                         <div class="form-group col-md-5">
@@ -72,8 +66,6 @@
                         <div class="form-group col-md-2">
                             <?php echo '<input type="text" class="form-control" value="'.$seleccion['idE'].'" name="idEvent" readonly>';?>
                             <?php echo '<input type="text" class="form-control" value="'.$seleccion['idA'].'" name="oldArtist" readonly>';?>
-                            <?php //echo '<input type="text" class="form-control" value="'.$seleccion['nameE'].'" readonly>';?>
-                        </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-10">
@@ -179,21 +171,17 @@
                         <div class="form-row">
                             <div class="form-group col-md-5">
                                 <div class="form-group">
-                                    <label for="imgProduct">Imagen del Producto (Exibición [237x237px])</label>
-                                    <?php echo '<br>Imagen elegida: '.$seleccion['imgP'];?>
-                                    <input type="file" class="form-control-file" name="imgProduct">
+                                    <label for="stokProducto">Stok Disponible</label>
+                                    <?php echo '<input type="number" class="form-control" name="stokProducto" value="'.$seleccion['stok'].'" readonly>';?>
                                 </div>
-                            </div>
-                            
+                            </div>                            
                         </div>
                         <button type="submit" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Si borra el producto, se borrará permamentente">Eliminar Producto</button>
                     </form>
-                </div>
-                
+                </div>                
                 <?php
                 break;
             case 'usuario': ?> 
-
                 <div name="Create" class="container mt-4">
                     <form action="actionDELETE.php" method="post">
                         <div class="form-row">
@@ -266,9 +254,6 @@
                 break;
         }    
     ?>
-    
-    
-    
     </div>
 </body>
 </html>

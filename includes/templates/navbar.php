@@ -11,10 +11,10 @@
 <?php  
     session_start();
     if (isset($_SESSION['user'])) {
-        echo '<a href="index.php"> ['.$_SESSION['usuarioID'].' - '.$_SESSION['name'].'] </a>';
         echo ' <a href="tienda/carrito.php">
         Carrito
         </a>';
+        echo '<a href="index.php"> ['.$_SESSION['name'].'] </a>';
         echo '<a href="includes/functions/logout.php">
         Cerrar de Sesión
         </a>';
